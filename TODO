@@ -1,0 +1,46 @@
+TODO for Games::Bingo
+
+$Id: TODO,v 1.2 2003/05/09 19:46:17 jonasbn Exp $
+
+Version 0.01
+
+	- Get it to work??
+	
+	- With printing capabilities
+	
+	- Add Aqua GUI bindings (CamelBones), separate project
+	
+	- Write documentation
+
+Version 0.02
+
+	- Encapsulate random function.
+
+    - Improve constructor in Games::Bingo so use of init can be avoided.
+
+	- Separate Games::Bingo into Games::Bingo and Games::Bingo::Print modules
+
+	- Add an assertion to the get_column method in Games::Bingo::ColumnCollection 
+	  so illegal numbers issue a warning.
+
+	- Add assertion to the remove_column method in Games::Bingo::ColumnCollection
+	  so illegal numbers issue a warning.
+
+	- Add possibility of providing a complete array of Columns to the constructor 
+	  in Games::Bingo::ColumnCollection.
+	
+	- The generated PDF could use some fine-tuning
+	
+	- Restructurize tests for easier identification
+	
+	- Write tests for the _integrity_check method in Games::Bingo::Print::Plate
+	
+	- Alter Games::Bingo::Print so the number of plates on a page is a parameter 
+
+Version X?
+
+	- Write a Tk front-end
+	
+	- Implement checksums on plates
+	
+	- Generate plates top-down instead of bottom up

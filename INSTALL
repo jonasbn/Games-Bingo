@@ -1,0 +1,17 @@
+INSTALL for Games::Bingo
+
+$Id: INSTALL,v 1.2 2003/05/09 20:16:06 jonasbn Exp $
+
+INSTALLATION
+
+This module requires PDFLib. PDFLib can be downloaded from http://www.pdflib.com/ and is owned by PDFLib.
+
+Apart from the installation of the PDFLib libraries you will require the PDFLib module from CPAN.
+
+To install Games::Bingo run:
+
+	perl Makefile.PL
+	make
+	make install
+
+jonasbn <jonasbn@io.dk>

@@ -1,0 +1,9 @@
+License for Games::Bingo
+
+$Id: LICENSE,v 1.2 2003/05/09 20:16:06 jonasbn Exp $
+
+Games::Bingo and related modules are free software and is released under the 
+Artistic License. See <http://www.perl.com/language/misc/Artistic.html> for 
+details.
+
+Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn) < jonasbn@io.dk >

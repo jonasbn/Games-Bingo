@@ -1,0 +1,21 @@
+Known BUGS in Games::Bingo
+
+$Id: BUGS,v 1.4 2003/05/09 20:16:06 jonasbn Exp $
+
+ -  Plate.pm line 120 dies once in a while because the handling of the 
+	collection is not working as expected.
+
+	my $number = $c->get_number();
+
+	FIXED
+	
+ -  The sort of the column does apparently not work or maybe I use it the 
+    wrong way
+    
+    FIXED
+ 
+ -  The plate population algoritm seems to have a flaw in that sense that if 
+    we end up with a situation where we have to populate the last row with 
+    two numbers from the same series, the plate will lack a number or two.
+    
+    FIXED (work-around implemented)
