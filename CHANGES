@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.21 2003/08/20 05:32:16 jonasbn Exp $
+$Id: CHANGES,v 1.29 2004/01/06 21:01:01 jonasbn Exp $
 
 0.01 Released 10th. of May 2003 
 
@@ -125,3 +125,59 @@ $Id: CHANGES,v 1.21 2003/08/20 05:32:16 jonasbn Exp $
   http://rt.cpan.org/NoAuth/Bug.html?id=3273 and the BUGS file)
 
 - Added Acknowledgement section to the README
+
+0.09 Released 6th. of January 2004 (Update recommended)
+
+- Added Acknowledgement section to the Games::Bingo POD
+
+- Cleaned up some POD
+
+- Started implementing the new Games::Bingo::Card class aswell as the
+  different games (1, 2 and full card).
+  
+- Merged Games::Bingo::Card and Games::Bingo::Print::Card obsoleting
+  the latter, this also means migrating the test files related to
+  Games::Bingo::Print::Card to Games::Bingo
+
+- Removed _generate from Games::Bingo::Card
+
+- Added Games::Bingo::Constants, introducing these constants:
+
+	NUMBER_OF_NUMBERS == 90
+	NUMBER_OF_NUMBERS_IN_ROW == 4
+	NUMBER_OF_ROWS_IN_CARD == 3
+	NUMBER_OF_COLUMNS_IN_CARD == 9
+	NUMBER_OF_NUMBERS_IN_CARD == 
+		NUMBER_OF_NUMBERS_IN_ROW * NUMBER_OF_ROWS_IN_CARD
+
+- Added a b/ directory containing *.t files, which demonstrate the errors
+  found in 0.08
+
+- Added b/bless.t, which is aimed at the bless bug
+
+- Added b/short.t which is aimed at the number shortage bug
+
+- Added b/sort.t which is aimed at the number sorting bug 
+
+- Renamed get_number to get_highest_number in G::B::Column
+
+- Changed get_higest_number so it actually does what the POD says
+
+- Fixed the bless bug (SEE BUGS), added the new _flush method so the
+  bless method is not called anymore
+
+- Fixed the short bug (SEE BUGS), the new _flush method also fixed this
+  problem
+  
+- Fixed bug in card generation code, where the picked numbers was put
+  in the wrong collections
+  
+- Fixed sort bug (SEE BUGS), now the generated card is properly sorted
+
+- Started cleaning up some of the tests, the many changes in the upcoming
+  release 0.09 have had great impact on the test suite
+  
+- Removed set_status method from G::B::Column, it is no longer used
+
+- Fixed a bug in the pulled method in Games::Bingo
+

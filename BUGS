@@ -1,6 +1,6 @@
 Known BUGS in Games::Bingo (and issues)
 
-$Id: BUGS,v 1.15 2003/08/18 08:34:43 jonasbn Exp $
+$Id: BUGS,v 1.18 2003/12/27 10:27:16 jonasbn Exp $
 
 Alpha
 
@@ -106,3 +106,66 @@ Alpha
   [cpan #3273] <URL: http://rt.cpan.org/NoAuth/Bug.html?id=3273 >
 
   PATCHED
+
+0.08
+
+- Problem with generating ASCII plates (this problem might have existed
+  before). But it seems as if I am loosing some numbers during the card
+  generation.
+  
+  Example, see first row:
+
+  +--+--+--+--+--+--+--+--+--+
+  |  |  |23|  |49|  |65|  |  |
+  +--+--+--+--+--+--+--+--+--+
+  | 8|  |  |  |  |57|69|77|  |
+  +--+--+--+--+--+--+--+--+--+
+  | 2|11|  |32|  |  |  |  |80|
+  +--+--+--+--+--+--+--+--+--+
+  
+  See also: b/sort.t
+  
+  FIXED
+  
+- The number presentation does not handle the sorted numbers well.
+
+  As you can see the first column is ok whereas the fifth not ok.
+  
+  inserting number 71 into column 7 at row 2
+  inserting number 51 into column 5 at row 2
+  inserting number 24 into column 2 at row 2
+  inserting number 40 into column 4 at row 2
+  inserting number 19 into column 1 at row 1
+  inserting number 63 into column 6 at row 1
+  inserting number 8 into column 0 at row 1
+  inserting number 35 into column 3 at row 1
+  inserting number 6 into column 0 at row 0
+  inserting number 41 into column 4 at row 0
+  inserting number 89 into column 8 at row 0
+  inserting number 50 into column 5 at row 0
+  success (12)
+  +--+--+--+--+--+--+--+--+--+
+  | 6|  |  |  |41|50|  |  |89|
+  +--+--+--+--+--+--+--+--+--+
+  | 8|19|  |35|  |  |63|  |  |
+  +--+--+--+--+--+--+--+--+--+
+  |  |  |24|  |40|51|  |71|  |
+  +--+--+--+--+--+--+--+--+--+
+
+  See also: b/short.t
+  
+  FIXED
+  
+- Problem with the numbers generated versus the numbers printed. Sometimes
+  the printed card does not correspond with the one generated. Apperently
+  this has to do with the blessing of the objects and therefore the
+  Games::Bingo card should be rewritten so that the object can be reused.
+  
+  Example:
+  
+  Games::Bingo::Card=ARRAY(0x1836130)
+  Games::Bingo::Card=ARRAY(0x1801180)
+  
+  See also b/bless.t
+  
+  FIXED

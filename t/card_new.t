@@ -1,11 +1,9 @@
-#!/usr/local/bin/perl -w
-
-# $Id: Card.t,v 1.3 2003/07/30 18:50:01 jonasbn Exp $
+#!/usr/bin/perl -w
 
 use strict;
+use Test::More tests => 44;
 use lib qw(lib ../lib);
-use Test::More tests => 46;
-use Data::Dumper;
+use Games::Bingo::Card;
 
 my $amount = 10;
 
@@ -30,20 +28,5 @@ while ($amount) {
 }
 
 #test 44
-my $b = Games::Bingo->new(90);
-my $card = Games::Bingo::Card->new($b);
+my $card = Games::Bingo::Card->new();
 is(ref $card, 'Games::Bingo::Card', 'Testing the object');
-
-
-#test 45
-my $bingo2 = Games::Bingo->new(90);
-is($card->validate($bingo2), 0, 'Testing validate');
-
-#test 46
-for(1 .. 90) {
-	$bingo2->play();
-}
-
-is($card->validate($bingo2), 1, 'Testing validate');
-
-#print STDERR Dumper $bingo2;

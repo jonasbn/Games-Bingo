@@ -1,6 +1,6 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm,v 1.15 2003/07/30 17:53:11 jonasbn Exp $
+# $Id: ColumnCollection.pm,v 1.17 2003/12/27 13:27:06 jonasbn Exp $
 
 use strict;
 use integer;
@@ -9,9 +9,10 @@ use Games::Bingo;
 use Games::Bingo::Column;
 use vars qw(@ISA $VERSION);
 use Data::Dumper;
+use Carp;
 
 @ISA = qw(Games::Bingo);
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub new {
 	my $class = shift;
@@ -54,27 +55,32 @@ sub add_column {
 }
 
 sub _remove_column {
-	my ($self, $index) = @_;
+	my ($self, $idx) = @_;
 
-	if ($index < 0 ) {
-		warn "column index cannot be a negative number\n";
+	if ($idx < 0 ) {
+		carp "cannot remove column, index cannot be a negative number ($idx)\n";
 		return undef;
-	} elsif ($index > (scalar @{$self})) {
-		warn "no columns with that index\n";
+	} elsif ($idx > (scalar @{$self})) {
+		carp "cannot remove column, no column with that index ($idx)\n";
 		return undef;
 	}
 
-	splice(@{$self}, $index, 1); 
+	splice(@{$self}, $idx, 1); 
 }
 
 sub get_column {
 	my ($self, $index, $do_splice, $auto_splice) = @_;
+		
+	unless ($index =~ m/^\d+$/) {
+		warn "no index specified";
+		return undef;
+	}
 	
 	if ($index < 0 ) {
-		warn "column index cannot be a negative number\n";
+		carp "cannot get column, index cannot be a negative number ($index)\n";
 		return undef;
 	} elsif ($index > (scalar @{$self})) {
-		warn "no columns with that index\n";
+		carp "cannot get column, no columns with that index ($index)\n";
 		return undef;
 	}
 		

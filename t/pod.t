@@ -1,4 +1,6 @@
-# $Id: pod.t,v 1.1 2003/05/28 05:51:03 jonasbn Exp $ 
+#!/usr/bin/perl -w
+
+# $Id: pod.t,v 1.3 2004/01/06 20:54:01 jonasbn Exp $ 
 
 #pod test courtesy of petdance
 #http://use.perl.org/~petdance/journal/12391

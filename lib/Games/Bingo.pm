@@ -1,20 +1,24 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.19 2003/08/20 05:32:16 jonasbn Exp $
+# $Id: Bingo.pm,v 1.23 2004/01/06 20:10:05 jonasbn Exp $
 
 use strict;
 use integer;
 use POSIX qw(floor);
-use vars qw($VERSION);
+use vars qw($VERSION @ISA);
+use Games::Bingo::Card;
 
-$VERSION = '0.08';
+@ISA = qw(Games::Bingo::Card);
+$VERSION = '0.09';
 
 sub new {
-	my ($class, $ceiling) = @_;
+	my $class = shift;
+	my $ceiling = shift || 90;
 	
 	my $self = bless {
 		_numbers => [],
 		_pulled  => [[],[],[],[],[],[],[],[],[],],
+		game     => 1,
 	}, $class || ref $class;
 
 	if ($ceiling) {
@@ -32,6 +36,8 @@ sub init {
 	for(my $i = 1; $i < ($ceiling + 1); $i++) { 
 		push @{$numbers}, $i;
 	}
+	
+	return 1;
 }
 
 sub play {
@@ -54,10 +60,16 @@ sub play {
 
 sub pulled {
 	my ($self, $number) = @_;
-	
-	my @pulled = $self->_all_pulled();
-	
-	if ($pulled[$number]) {
+		
+	my $found = 0;
+	foreach my $n ($self->_all_pulled()) {
+		if ($n == $number) {
+			$found++;
+			last;
+		};
+	}
+		
+	if ($found) {
 		return 1;
 	} else {
 		return 0;
@@ -86,10 +98,9 @@ sub pull {
 sub take {
 	my ($self, $taken, $take) = @_;
 
-    my $take_modified = sprintf("%02d", $take);
-    my ($x, $y) = $take_modified =~ m/^(\d{1})(\d{1})$/o;
+    my ($x, $y, $take_modified) = $self->splitnumber($take);
 
-     return $taken->[$x][$y] = $take_modified;
+    return $taken->[$x][$y] = $take_modified;
 }
 
 sub random {
@@ -113,6 +124,10 @@ Games::Bingo - a bingo game Perl implementation
 C<< use Games::Bingo; >>
 
 C<< my $bingo = Games::Bingo-E<gt>new(90); >>
+
+C<< my $bingo = Games::Bingo-E<gt>new(); >>
+
+90 is actually the default
 
 C<< my $number = $bingo-E<gt>play(); >>
 
@@ -153,10 +168,53 @@ This are the central methods of Games::Bingo
 =head2 new
 
 The constructor is quite simple. It can either be called without any
-paramters and then followed by a call to B<init> see below. Or the
+paramters and then followed by a call to B<init> see below or the
 ceiling for the numbers (stored internally) can be given as a
-parameter, the latter is the recommeded use, please refer to the
-B<SYNOPSIS>.
+parameter, the latter is the recommeded use.
+
+If no indicator of the number of numbers you want in your bingo game is
+given the game defaults to 90. This can be overwritten if using the old
+API, please refer to the B<SYNOPSIS>.
+
+The attributes of the class are the following:
+
+=over 4
+
+=item _numbers
+
+The list holding all the numbers in the pull pool.
+		
+=item _numbers_pulled
+
+A list holding the numbers which have been pulled.
+		
+=item game
+
+A flag indicating where the game currently are and how it should be run.
+
+These are the different values:
+
+=over 4
+
+=item * 0
+
+Game is over
+
+=item * 1
+
+full card (the default)
+
+=item * 2
+
+2 rows
+
+=item * 3
+
+1 row
+
+=back
+
+=back
 
 =head2 init
 
@@ -166,6 +224,8 @@ method will push numbers onto the array reference from 1 to ceiling
 
 The use of init is not recommended, use the constructor in the
 recommended way instead.
+
+Returns 1 upon success.
 
 =head2 play
 
@@ -246,6 +306,35 @@ project.
 =head1 AUTHOR
 
 jonasbn E<lt>jonasbn@cpan.orgE<gt>
+
+=cut
+
+=head1 ACKNOWLEDGEMENTS
+
+This is a compilation of all the people have helped me, their names are
+scattered all over the modules where appropriate.
+
+=over
+
+=item Rikke Gornitzka for inviting me to the real bingo game, which
+started all this
+
+=item Matt Sergeant (MSERGEANT) for suggesting using PDFLib
+
+=item Allan Juul algoritms and code help
+
+=item Michael Legart (LEGART) trying to understand my problems
+
+=item Lars Thegler (THEGLER) for several bug reports
+
+=item Casper Warming (WARMING), for helping with the OSX client
+
+=item The remaining Copenhagen Perl Mongers for testing the IRC game
+
+=item All the ppl who have commented on my journal coming with
+suggestions etc.
+
+=back
 
 =cut
 
