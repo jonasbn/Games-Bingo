@@ -1,11 +1,11 @@
 package Games::Bingo::Column;
 
-# $Id: Column.pm,v 1.6 2003/05/08 20:53:19 jonasbn Exp $
+# $Id: Column.pm,v 1.8 2003/05/11 18:13:43 jonasbn Exp $
 
 use strict;
 use POSIX qw(floor);
 
-sub new ($;$@) {
+sub new {
 	my $class = shift;
 	my $label = shift;
 	my @array = sort _reverse (@_);
@@ -18,7 +18,7 @@ sub new ($;$@) {
 
 sub _reverse { $b <=> $a }
 
-sub populate ($$) {
+sub populate {
 	my $self = shift;
 	my $value = shift;
 	
@@ -27,14 +27,14 @@ sub populate ($$) {
 	@{$self->{_array}} = sort _reverse @{$self->{_array}};
 }
 
-sub set_status ($$) {
+sub set_status {
 	my $self = shift;
 	my $status = shift;
 
 	$self->{_status} = $status;
 }
 
-sub get_random_number ($;$$) {
+sub get_random_number {
 	my $self = shift;
 	my $do_splice = shift;
 	
@@ -46,7 +46,7 @@ sub get_random_number ($;$$) {
 	return $number;
 }
 
-sub count_numbers ($) {
+sub count_numbers {
 	my $self = shift;
 	
 	my $count = 0;
@@ -55,7 +55,7 @@ sub count_numbers ($) {
 	return $count;
 }
 
-sub get_number ($) {
+sub get_number {
 	my $self = shift;
 
 	my $number = shift(@{$self->{_array}});
@@ -69,15 +69,11 @@ __END__
 
 =head1 NAME
 
-Games::Bingo::Column
+Games::Bingo::Column - a column class used for generating bingo plates
 
 =cut
 
 =head1 SYNOPSIS
-
-=cut
-
-=pod
 
 my $c = Games::Bingo::Column->new();
 
@@ -90,8 +86,6 @@ my $c = Games::Bingo::Column->new(@numbers);
 
 my $number = $c->get_number(1);
 my $c->set_status(1);
-
-=cut
 
 =head1 DESCRIPTION
 

@@ -1,6 +1,6 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm,v 1.6 2003/05/08 19:17:41 jonasbn Exp $
+# $Id: ColumnCollection.pm,v 1.8 2003/05/11 18:13:43 jonasbn Exp $
 
 use strict;
 use integer;
@@ -8,13 +8,13 @@ use POSIX qw(floor);
 use lib qw(lib ../lib);
 use Games::Bingo::Column;
 
-sub new ($) {
+sub new {
 	my $class = shift;
 	
 	my $self =  bless [], $class || ref $class;
 }
 
-sub divide ($$@) {
+sub divide {
 	my $self = shift;
 	my $number_of_columns = shift;
 	my @numbers = @_;
@@ -34,7 +34,7 @@ sub divide ($$@) {
 	}
 }
 
-sub add_column ($$;$) {
+sub add_column {
 	my $self = shift;
 	my $column = shift;
 	my $index = shift;
@@ -46,14 +46,14 @@ sub add_column ($$;$) {
 	}
 }
 
-sub _remove_column ($$) {
+sub _remove_column {
 	my $self = shift;
 	my $index = shift;
 
 	splice(@{$self}, $index, 1); 
 }
 
-sub get_column ($$;$$) {
+sub get_column {
 	my $self = shift;
 	my $index = shift;
 	my $do_splice = shift;
@@ -76,7 +76,7 @@ sub get_column ($$;$$) {
 	return $column;
 }
 
-sub get_random_column ($;$$) {
+sub get_random_column {
 	my $self = shift;
 	my $do_splice = shift;
 	my $auto_splice = shift;
@@ -93,15 +93,21 @@ __END__
 
 =head1 NAME
 
-Games::Bingo::ColumnCollection
+Games::Bingo::ColumnCollection -  a collection class for holding columns
 
 =cut
 
 =head1 SYNOPSIS
 
-=cut
+my $col = Games::Bingo::ColumnCollection->new();
 
-=pod
+my $c = Games::Bingo::Column->new(0, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+$col->add_column($c1);
+
+my $d = $col->get_column(1);
+
+my $e = $col->get_random_column();
 
 =cut
 

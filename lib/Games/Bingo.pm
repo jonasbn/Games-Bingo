@@ -1,15 +1,15 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.5 2003/05/03 10:27:19 jonasbn Exp $
+# $Id: Bingo.pm,v 1.8 2003/05/11 18:24:43 jonasbn Exp $
 
 use strict;
 use integer;
 use POSIX qw(floor);
 use vars qw($VERSION);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
-sub new ($) {
+sub new {
 	my $class = shift;
 	
 	my $self = bless {
@@ -17,7 +17,7 @@ sub new ($) {
 	}, $class || ref $class;
 }
 
-sub init ($$$) {
+sub init {
 	my $self = shift;
 	my $numbers = shift;
 	my $ceiling = shift;
@@ -25,7 +25,7 @@ sub init ($$$) {
 	for(my $i = 1; $i < ($ceiling + 1); $i++) { push @$numbers, $i; }
 }
 
-sub play ($$) {
+sub play {
 	my $self = shift;
 	my $numbers = shift;
 	
@@ -36,7 +36,7 @@ sub play ($$) {
 	return $number;
 }
 
-sub take ($$$) {
+sub take {
 	my $self = shift;
     my $taken = shift;
     my $take = shift;
@@ -53,7 +53,7 @@ __END__
 
 =head1 NAME
 
-Games::Bingo
+Games::Bingo - a Bingo Game Perl implementation
 
 =cut
 
@@ -123,6 +123,8 @@ be changed later (if necessary).
 =item Games::Bingo::Print
 
 =item Games::Bingo::Print::Plate
+
+=item bin/bingo.pl
 
 =back
 

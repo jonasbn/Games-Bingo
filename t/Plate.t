@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl -w
 
-# $Id: Plate.t,v 1.4 2003/05/09 19:39:45 jonasbn Exp $
+# $Id: Plate.t,v 1.5 2003/05/11 15:03:12 jonasbn Exp $
 
 use strict;
 use Data::Dumper;

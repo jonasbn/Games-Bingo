@@ -1,6 +1,6 @@
 use ExtUtils::MakeMaker;
 
-# $Id: Makefile.PL,v 1.2 2003/05/09 20:16:07 jonasbn Exp $
+# $Id: Makefile.PL,v 1.3 2003/05/11 15:03:11 jonasbn Exp $
 
 WriteMakefile(
     'NAME'	        => 'Games::Bingo',

@@ -1,6 +1,6 @@
 package Games::Bingo::Print;
 
-# $Id: Print.pm,v 1.3 2003/05/09 19:39:45 jonasbn Exp $
+# $Id: Print.pm,v 1.5 2003/05/11 18:13:43 jonasbn Exp $
 
 use strict;
 use integer;
@@ -25,7 +25,7 @@ sub new {
 	}, $class || ref $class;
 }
 
-sub print_pages ($$) {
+sub print_pages {
 	my ($self, $pages) = @_;
 	
 	my $pdf = $self->{'pdf'};
@@ -81,7 +81,7 @@ sub print_pages ($$) {
 	$pdf->finish;
 }
 
-sub _print_plate ($%) {
+sub _print_plate {
 	my $self = shift;
 	my %args = @_;
 
@@ -112,7 +112,7 @@ sub _print_plate ($%) {
 	}
 }
 
-sub _print_row ($%) {
+sub _print_row {
 	my $self = shift;
 	my %args = @_;
 	
@@ -157,19 +157,23 @@ __END__
 
 =head1 NAME
 
-Games::Bingo
+Games::Bingo - PDF Generation Class
 
 =cut
 
 =head1 SYNOPSIS
+
+use Games::Bingo::Print;
+
+my $bp = Games::Bingo::Print->new();
+
+$bp->print_pages(2);
 
 =head1 DESCRIPTION
 
 This is that actual printing class. It generates PDFs with Bingo plates on them.
 
 =head2 METHODS
-
-=over 4
 
 =head2 new
 
@@ -241,6 +245,8 @@ The numbers to be insertet into the row as an reference to an array.
 =item PDFLib
 
 =item Games::Bingo::Print::Plate
+
+=item bin/bingo_plates.pl
 
 =back
 

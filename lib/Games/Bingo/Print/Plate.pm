@@ -1,6 +1,6 @@
 package Games::Bingo::Print::Plate;
 
-# $Id: Plate.pm,v 1.3 2003/05/09 19:39:45 jonasbn Exp $
+# $Id: Plate.pm,v 1.5 2003/05/11 18:13:43 jonasbn Exp $
 
 use strict;
 use integer;
@@ -9,7 +9,7 @@ use Games::Bingo;
 use Games::Bingo::Column;
 use Games::Bingo::ColumnCollection;
 
-sub new ($) {
+sub new {
 	my $class = shift;
 	
 	my $self = bless [
@@ -27,7 +27,7 @@ sub new ($) {
 	return $self;
 }
 
-sub _populate ($$$) {
+sub _populate {
 	my ($self, $row, $number) = @_;
 		
 	my $column = $self->_resolve_column($number);
@@ -35,7 +35,7 @@ sub _populate ($$$) {
 	$self->[$column]->[$row] = $number;
 }
 
-sub _integrity_check ($) {
+sub _integrity_check {
 	my ($self) = @_;
 
 	my $rv = 12;
@@ -53,7 +53,7 @@ sub _integrity_check ($) {
 	}
 }
 
-sub _resolve_column ($$) {
+sub _resolve_column {
 	my ($self, $number) = @_;
 	
 	my $result = ($number / 10);
@@ -68,7 +68,7 @@ sub _resolve_column ($$) {
 	return $column;
 }
 
-sub _init ($) {
+sub _init {
 	my ($self) = @_;
 	
 	my @numbers;
@@ -102,7 +102,7 @@ sub _init ($) {
 	return $final_collection;
 }
 
-sub populate ($) {
+sub populate {
 	my ($self) = @_;
 
 	HACK: 
@@ -151,15 +151,15 @@ __END__
 
 =head1 NAME
 
-Games::Bingo::Print::Plate
+Games::Bingo::Print::Plate - Bingo plate class for PDF generation 
 
 =head1 SYNOPSIS
 
 use Games::Bingo::Print::Plate;
 
-C<<my $p = Games::Bingo::Print::Plate->new();>>
+my $p = Games::Bingo::Print::Plate->new();
 
-C<<$p->populate();>>
+$p->populate();
 
 =head1 DESCRIPTION
 

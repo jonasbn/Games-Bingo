@@ -1,13 +1,26 @@
 README for Games::Bingo
 
-$Id: README,v 1.2 2003/05/09 20:16:07 jonasbn Exp $
+$Id: README,v 1.3 2003/05/11 18:13:43 jonasbn Exp $
 
-This collection of modules and programs comes from when I got the idea that I had never programed a bingo game for my computer. I got inpired by playing and actual physical bingo game and I though to myself - that's easy to implement and yes it was.
+This collection of modules and programs comes from when I got the idea
+that I had never programed a bingo game for my computer. I got inpired
+by playing and actual physical bingo game and I though to myself -
+that's easy to implement and yes it was.
 
-But now the project has grown, and the next natural step was to make the progam able to print its own bingo plates, Matt Saergant suggested using PDFLib.
+But now the project has grown, and the next natural step was to make the
+progam able to print its own bingo plates, Matt Saergant suggested using
+PDFLib.
 
-Well not even having the PDF part in place I got the crazy idea of implementing an Aqua GUI for the program, which would give the code a nice separation having both a console version and a GUI version.
+Well not even having the PDF part in place I got the crazy idea of
+implementing an Aqua GUI for the program, which would give the code a
+nice separation having both a console version and a GUI version.
 
 Anyway - have fun
+
+BTW If you experience any bugs please report them using:
+
+http://rt.cpan.org or bug-Games-Bingo@rt.cpan.org
+
+Thanks,
 
 jonasbn <jonasbn@io.dk>
