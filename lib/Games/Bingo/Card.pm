@@ -1,6 +1,6 @@
 package Games::Bingo::Card;
 
-# $Id: Card.pm,v 1.14 2004/01/21 19:48:26 jonasbn Exp $
+# $Id: Card.pm 1358 2004-05-29 13:57:14Z jonasbn $
 
 use strict;
 use integer;
@@ -152,7 +152,7 @@ sub _resolve_column {
 	if ($result < 1) { #ones go in column 0
 		$column = 0;
 	} elsif ($result == NUMBER_OF_COLUMNS_IN_CARD) { #9 go in column 8
-		$column = 8; 	
+		$column = 8;
 	}
 	return $column;
 }
@@ -207,7 +207,7 @@ sub populate {
 
 		for (my $i = NUMBER_OF_NUMBERS_IN_ROW; $i > 0; $i--) {
 
-			my $c = $fcc->get_random_column(1);			
+			my $c = $fcc->get_random_column(1);
 			my $number = $c->get_highest_number(1);
 						
 			if ($c->count_numbers() > 0) {
@@ -215,12 +215,12 @@ sub populate {
 			} else {
 				#implicitly discarding empty columns
 			} 		
-			$self->_insert($row, $number);					
+			$self->_insert($row, $number);
 		}
 		foreach my $column (@${fcc}) {
 			$tcc->add_column($column);
 		}		
-		$fcc = $tcc;		
+		$fcc = $tcc;
 	}	
 	my $amount = scalar $self->get_all_numbers();
 	
@@ -255,27 +255,20 @@ __END__
 
 Games::Bingo::Card - a helper class for Games::Bingo
 
-=cut
-
 =head1 SYNOPSIS
 
-C<< use Games::Bingo::Card; >>
+	use Games::Bingo::Card;
 
-C<< my $b = Games::Bingo-E<gt>new(90); >>
+	my $b = Games::Bingo-E<gt>new(90);
+	my $card = Games::Bingo::Card-E<gt>new($b);
 
-C<< my $card = Games::Bingo::Card-E<gt>new($b); >>
+	my $bingo = Games::Bingo-E<gt>new(90);
+	$card-E<gt>validate($bingo);
 
-C<< my $bingo = Games::Bingo-E<gt>new(90); >>
+	use Games::Bingo::Print::Card;
 
-C<< $card-E<gt>validate($bingo); >>
-
-C<< use Games::Bingo::Print::Card; >>
-
-C<< my $p = Games::Bingo::Print::Card-E<gt>new(); >>
-
-C<< $p-E<gt>populate(); >>
-
-=cut
+	my $p = Games::Bingo::Print::Card-E<gt>new();
+	$p-E<gt>populate();
 
 =head1 DESCRIPTION
 
@@ -286,11 +279,7 @@ game where a player indicate victory.
 It is also used by Games::Bingo::Print to hold the generated bingo
 cards before they are printed.
 
-=cut
-
 =head1 METHODS
-
-=cut
 
 =head2 new
 
@@ -298,15 +287,11 @@ This method generates an object representing a bingo card.
 
 The constructor, takes no arguments.
 
-=cut
-
 =head2 populate
 
 This method is the main method of the class. It populates the card
 objects with a predefined number of randomly picked numbers which can
 be printed using the Games::Bingo::Print class.
-
-=cut
 
 =head2 _init
 
@@ -314,8 +299,6 @@ Init uses the function in Games::Bingo::Column and
 Games::Bingo::ColumnCollection, which are use to generate the necessary
 random numbers to generate the card and set the them in the necessary
 columns.
-
-=cut
 
 =head2 _insert
 
@@ -348,21 +331,28 @@ This method does not hold the same flaw as the method above though.
 
 =head2 _print_card
 
-This is the console version of the _print_card version, which is
+This is the console version of the B<_print_card> version, which is
 implemented in B<Games::Bingo::Print>. 
 
 It prints the generated card with numbers.
 
 =head2 _flush
 
-This method can be used to flush the contents of the Card object.
+This method can be used to flush the contents of the B<Card> object.
+
+=head2 get_all_numbers
+
+Returns all the numbers contained in the B<_array> attribute as an array.
+
+=head2 splitnumber
+
+Takes a number (prepends 0 its a single digit number) and returns it
+split in two (We use this for identifying the column it belongs to).
 
 =head1 BUGS
 
 This class contains a bug in B<populate>, which is regarded a design
 flaw. A work-around have implemented. See the BUGS file.
-
-There is also a bug in B<_print>
 
 No other bugs are known at the time of writing.
 
@@ -370,17 +360,17 @@ No other bugs are known at the time of writing.
 
 =over 4
 
-=item Games::Bingo
+=item L<Games::Bingo>
 
-=item Games::Bingo::Bot
+=item L<Games::Bingo::Bot>
 
-=item Games::Bingo::Column
+=item L<Games::Bingo::Column>
 
-=item Games::Bingo::Column::Collection
+=item L<Games::Bingo::Column::Collection>
 
-=item Games::Bingo::Constants
+=item L<Games::Bingo::Constants>
 
-=item Games::Bingo::Print
+=item L<Games::Bingo::Print>
 
 =back
 
@@ -392,8 +382,6 @@ project.
 =head1 AUTHOR
 
 jonasbn E<lt>jonasbn@cpan.orgE<gt>
-
-=cut
 
 =head1 COPYRIGHT
 

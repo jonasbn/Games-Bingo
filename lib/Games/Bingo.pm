@@ -1,6 +1,6 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.26 2004/01/31 18:16:21 jonasbn Exp $
+# $Id: Bingo.pm 1358 2004-05-29 13:57:14Z jonasbn $
 
 use strict;
 use integer;
@@ -10,7 +10,7 @@ use Games::Bingo::Card;
 use Games::Bingo::Constants qw(NUMBER_OF_NUMBERS);
 
 @ISA = qw(Games::Bingo::Card);
-$VERSION = '0.12';
+$VERSION = '0.13';
 
 sub new {
 	my $class = shift;
@@ -118,49 +118,39 @@ __END__
 
 Games::Bingo - a bingo game Perl implementation
 
-=cut
-
 =head1 SYNOPSIS
 
-C<< use Games::Bingo; >>
-
-C<< my $bingo = Games::Bingo-E<gt>new(90); >>
-
-C<< my $bingo = Games::Bingo-E<gt>new(); >>
+	use Games::Bingo;
+	my $bingo = Games::Bingo-E<gt>new(90);
+	
+	my $bingo = Games::Bingo-E<gt>new();
 
 90 is actually the default
 
-C<< my $number = $bingo-E<gt>play(); >>
+	my $number = $bingo-E<gt>play(); >>
 
-C<< my @taken; >>
+	my @taken;
 
-C<< $bingo-E<gt>pull(\@pulled, $number); >>
+	$bingo-E<gt>pull(\@pulled, $number);
 
 or
 
-C<< use Games::Bingo; >>
+	use Games::Bingo;
+	my $bingo = Games::Bingo-E<gt>new();
 
-C<< my $bingo = Games::Bingo-E<gt>new(); >>
+	my @numbers;
+	$bingo-E<gt>init(\@numbers, 90);
 
-C<< my @numbers; >>
+	my $number = $bingo-E<gt>play(\@numbers);
+	my @taken;
 
-C<< $bingo-E<gt>init(\@numbers, 90); >>
-
-C<< my $number = $bingo-E<gt>play(\@numbers); >>
-
-C<< my @taken; >>
-
-C<< $bingo-E<gt>take(\@taken, $number); >>
-
-=cut
+	$bingo-E<gt>take(\@taken, $number);
 
 =head1 DESCRIPTION
 
 This is a simple game of bingo. The program can randomly call out the
 numbers. The game will be get more features in the future, please refer
 to the B<TODO> section (below).
-
-=cut
 
 =head1 METHODS
 
@@ -256,59 +246,55 @@ as rand (% perldoc -f rand).
 
 The result is rounded down using POSIX::floor
 
-=cut
-
 =head2 pulled
 
 A method which return 1 or 0 indicating true or false, whether the
 number given as a parameter has been pulled. 
 
-=cut
-
 =head2 _all_pulled
 
 A method which returns all pulled numbers as an array.
-
-=cut
 
 =head2 pull
 
 A clumsy alias/"overload" implementation of the take method.
 
-=cut
-
 =head1 SEE ALSO
 
-=over 4
+=over
 
-=item Games::Bingo::Column
+=item L<Games::Bingo::Column>
 
-=item Games::Bingo::ColumnCollection
+=item L<Games::Bingo::ColumnCollection>
 
-=item Games::Bingo::Print
+=item L<Games::Bingo::Print>
 
-=item Games::Bingo::Print::Card
+=item L<Games::Bingo::Print::Card>
 
-=item Games::Bingo::Bot
+=item L<Games::Bingo::Bot>
 
-=item bin/bingo.pl
+=item F<bin/bingo.pl>
 
 =back
-
-=cut
 
 =head1 TODO
 
 The TODO file contains a complete list for the whole Games::Bingo
 project.
 
-=cut
+=head1 BUGS
+
+Please report issues via CPAN RT:
+
+  http://rt.cpan.org/NoAuth/Bugs.html?Dist=Games-Bingo
+
+or by sending mail to
+
+  bug-Games-Bingo@rt.cpan.org
 
 =head1 AUTHOR
 
 jonasbn E<lt>jonasbn@cpan.orgE<gt>
-
-=cut
 
 =head1 ACKNOWLEDGEMENTS
 
@@ -317,35 +303,31 @@ scattered all over the modules where appropriate.
 
 =over
 
-=item Rikke Gornitzka for inviting me to the real bingo game, which
+=item * Rikke Gornitzka for inviting me to the real bingo game, which
 started all this
 
-=item Matt Sergeant (MSERGEANT) for suggesting using PDFLib
+=item * Matt Sergeant (MSERGEANT) for suggesting using PDFLib
 
-=item Allan Juul algoritms and code help
+=item * Allan Juul algoritms and code help
 
-=item Michael Legart (LEGART) trying to understand my problems
+=item * Michael Legart (LEGART) trying to understand my problems
 
-=item Lars Thegler (THEGLER) for several bug reports
+=item * Lars Thegler (THEGLER) for several bug reports
 
-=item Casper Warming (WARMING), for helping with the OSX client
+=item * Casper Warming (WARMING), for helping with the OSX client
 
-=item
+=item * The remaining Copenhagen Perl Mongers for testing the IRC game
 
-=item The remaining Copenhagen Perl Mongers for testing the IRC game
-
-=item All the ppl who have commented on my journal coming with
+=item * All the ppl who have commented on my journal coming with
 suggestions etc.
 
 =back
-
-=cut
 
 =head1 COPYRIGHT
 
 Games::Bingo and related modules are free software and is released under
 the Artistic License. See
-E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
+L<http://www.perl.com/language/misc/Artistic.html> for details.
 
 Games::Bingo is (C) 2003-2004 Jonas B. Nielsen (jonasbn)
 E<lt>jonasbn@cpan.orgE<gt>

@@ -1,14 +1,30 @@
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Games-Bingo
-version:      0.12
-version_from: lib/Games/Bingo.pm
-installdirs:  site
+--- #YAML:1.0
+name: Games-Bingo
+version: 0.13
+author:
+  - jonasbn E<lt>jonasbn@cpan.orgE<gt>
+abstract: a bingo game Perl implementation
+license: perl
 requires:
-    POSIX:                         0
-    Test::Harness:                 0
-    Test::Pod:                     0.95
-    Data::Dumper:                  0
-    Test::More:                    0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.12
+  Data::Dumper: 0
+  POSIX: 0
+  Test::Harness: 0
+  Test::More: 0
+  Test::Pod: 0.95
+provides:
+  Games::Bingo:
+    file: lib/Games/Bingo.pm
+    version: 0.13
+  Games::Bingo::Card:
+    file: lib/Games/Bingo/Card.pm
+    version: 0.02
+  Games::Bingo::Column:
+    file: lib/Games/Bingo/Column.pm
+    version: 0.02
+  Games::Bingo::ColumnCollection:
+    file: lib/Games/Bingo/ColumnCollection.pm
+    version: 0.02
+  Games::Bingo::Constants:
+    file: lib/Games/Bingo/Constants.pm
+    version: 0.01
+generated_by: Module::Build version 0.2608

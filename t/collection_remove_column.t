@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: collection_remove_column.t,v 1.2 2004/01/06 20:54:01 jonasbn Exp $
+# $Id: collection_remove_column.t 1096 2004-01-06 20:54:01Z jonasbn $
 
 use strict;
 use Test::More tests => 2;

@@ -1,6 +1,6 @@
 TODO for Games::Bingo
 
-$Id: TODO,v 1.26 2003/12/27 13:27:06 jonasbn Exp $
+$Id: TODO 1507 2004-11-20 11:41:10Z jonasbn $
 
 - Write a Tk front-end?
 
@@ -36,8 +36,7 @@ $Id: TODO,v 1.26 2003/12/27 13:27:06 jonasbn Exp $
 
 - Rewrite complete test suite so each sub will have its own test file
 
-- Implementent Games::Bingo::Tournament
+- Implement Games::Bingo::Tournament
 
-- Add get_label method to G::B::Column
+- Add README to dist (I think this has been done)
 
-- Add count_columns method to G::B::ColumnCollection (proper encapsulation)

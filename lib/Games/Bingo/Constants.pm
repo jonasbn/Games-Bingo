@@ -1,6 +1,6 @@
 package Games::Bingo::Constants;
 
-# $Id: Constants.pm,v 1.6 2004/01/31 18:16:21 jonasbn Exp $
+# $Id: Constants.pm 1185 2004-01-31 18:16:20Z jonasbn $
 
 use strict;
 require Exporter;

@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl -w
 
-# $Id: card_populate.t,v 1.2 2004/01/21 19:48:26 jonasbn Exp $
+# $Id: card_populate.t 1136 2004-01-21 19:48:26Z jonasbn $
 
 use strict;
 use lib qw(lib ../lib);

@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl -w
 
-# $Id: collection_get_column.t,v 1.1 2004/01/04 20:05:48 jonasbn Exp $
+# $Id: collection_get_column.t 1090 2004-01-04 20:05:48Z jonasbn $
 
 use strict;
 use lib qw(lib ../lib);

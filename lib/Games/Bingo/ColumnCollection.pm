@@ -1,6 +1,6 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm,v 1.18 2004/01/21 19:48:26 jonasbn Exp $
+# $Id: ColumnCollection.pm 1358 2004-05-29 13:57:14Z jonasbn $
 
 use strict;
 use integer;
@@ -118,6 +118,12 @@ sub get_random_column {
 	}
 }
 
+sub count_columns {
+	my $self = shift;
+	
+	return scalar(@{$self});
+}
+
 1;
 
 __END__
@@ -126,21 +132,17 @@ __END__
 
 Games::Bingo::ColumnCollection -  a collection class for holding columns
 
-=cut
-
 =head1 SYNOPSIS
 
-C<< my $col = Games::Bingo::ColumnCollection-E<gt>new(); >>
+	my $col = Games::Bingo::ColumnCollection-E<gt>new();
 
-C<< my $c = Games::Bingo::Column-E<gt>new(0, [1, 2, 3, 4, 5, 6, 7, 8, 9]); >>
+	my $c = Games::Bingo::Column-E<gt>new(0, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
-C<< $col-E<gt>add_column($c1); >>
+	$col-E<gt>add_column($c1);
 
-C<< my $d = $col-E<gt>get_column(1); >>
+	my $d = $col-E<gt>get_column(1);
 
-C<< my $e = $col-E<gt>get_random_column(); >>
-
-=cut
+	my $e = $col-E<gt>get_random_column();
 
 =head1 DESCRIPTION
 
@@ -148,8 +150,6 @@ The ColumnCollection is used when building the bingo cards and is a
 temporary data structure for holding object of the class Column.
 
 The class is an encapsulated array, which is 1 indexed.
-
-=cut
 
 =head1 METHODS
 
@@ -209,8 +209,6 @@ constallations:
 From these arrays the Columns are built and the column collection is
 slowly populated, when done the column collection is returned.
 
-=cut
-
 =head2 add_column
 
 This is a push like method, is can be used to add an additional to the
@@ -243,6 +241,10 @@ The method uses the fact that the class contains Columns and a bit of
 polymorphy, so this method can be used to set the status of all Columns
 contained in the class. ' The parameter is the status which you want to
 set, either B<1> or B<0>.
+
+=head2 count_columns
+
+Returns the number of columns in G::B::Column object.
 
 =head1 SEE ALSO
 

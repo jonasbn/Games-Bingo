@@ -1,15 +1,33 @@
-use ExtUtils::MakeMaker;
 
-# $Id: Makefile.PL,v 1.6 2003/07/21 15:17:08 jonasbn Exp $
+# $Id: Makefile.PL 1511 2005-03-05 09:38:34Z jonasbn $
+# Ref: http://www.perl.com/pub/a/2003/02/12/module1.html?page=1
 
-WriteMakefile(
-    'NAME'	        => 'Games::Bingo',
-    'VERSION_FROM'  => 'lib/Games/Bingo.pm', # finds $VERSION
-	'PREREQ_PM' => {
-		'POSIX'         => 0,
-		'Test::Harness' => 0,
-		'Test::More'    => 0,
-		'Test::Pod'     => '0.95',
-		'Data::Dumper'  => 0,
-	}
-);
+use Cwd;
+use File::Spec;
+
+my $rv = eval "use Module::Build::Compat 0.03; 1";
+warn $@ if $@;
+
+unless ($rv) {
+  require ExtUtils::MakeMaker;
+  print "This module require Module::Build to install itself.\n";
+  my $yn =
+	  ExtUtils::MakeMaker::prompt
+		  ( '  Install Module::Build from CPAN', 'y' );
+  if ($yn =~ /^y(es)?/i) {
+	  # save this cause CPAN will chdir all over the place.
+	  my $cwd = cwd();
+	  my $makefile = File::Spec->rel2abs($0);
+	  require CPAN;
+	  CPAN->install('Module::Build');
+	  chdir $cwd
+		  or die "Cannot chdir to $cwd: $!";
+	  exec( $^X, $makefile, @ARGV )
+  } else {
+	  warn "Cannot install this module " .
+		   "without Module::Build.  Exiting ...\n";
+	  exit 0;
+  }
+}
+Module::Build::Compat->run_build_pl( args => \@ARGV );
+Module::Build::Compat->write_makefile;

@@ -1,6 +1,6 @@
 Known BUGS in Games::Bingo (and issues)
 
-$Id: BUGS,v 1.20 2004/01/25 17:29:17 jonasbn Exp $
+$Id: BUGS 1358 2004-05-29 13:57:14Z jonasbn $
 
 Alpha
 
@@ -68,7 +68,7 @@ Alpha
 0.02
 
 -  POD is =cut and then immediately continued... (from Juerd use.perl.org)
- 
+
 0.03
  
 -  Games::Bingo::Print POD is not browsable at CPAN, it is still broken.
@@ -183,3 +183,11 @@ Alpha
   
   PATCHED
   
+0.11
+
+- No known bugs
+
+0.12
+
+- No known bugs
+

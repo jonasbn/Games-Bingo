@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl -w
 
-# $Id: card_integrity_check.t,v 1.2 2004/01/31 18:16:21 jonasbn Exp $
+# $Id: card_integrity_check.t 1185 2004-01-31 18:16:20Z jonasbn $
 
 use strict;
 use lib qw(../lib lib);

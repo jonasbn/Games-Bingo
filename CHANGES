@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.33 2004/01/31 18:16:20 jonasbn Exp $
+$Id: CHANGES 1512 2005-03-05 09:52:39Z jonasbn $
 
 0.01 Released 10th. of May 2003 
 
@@ -193,13 +193,35 @@ $Id: CHANGES,v 1.33 2004/01/31 18:16:20 jonasbn Exp $
 - Removed requirement of Games::Bingo 0.05 in Games::Bingo::Card, hence
   they are shipped together (for now)
 
-0.11 Released 25th. of January (Update only necessary for Perl 5.005_03)
+0.11 Released 25th. of January 2004 (Update only necessary for Perl 5.005_03)
 
 - Fixed [cpan #5018] Patch from LTHEGLER applied to Games::Bingo::Constants.
 
-0.12 Released 31st. of January (Update not necessary)
+0.12 Released 31st. of January 2004 (Update not necessary)
 
 - According to my fellow Copenhagen Perl Monger Kim Hansen, the actual
   number of numbers in a bingo card is 15 not 12, so I have update
   G::B::Constants and fixed to test to use G::B::Constants.
-  
+
+0.13 Released 5th. of March 2005 (Update not necessary)
+
+- POD cleaned up (removing unneccesary tags)
+
+- Added get_label method to G::B::Column (including test)
+
+- Added count_columns method to G::B::ColumnCollection (including test)
+
+- Added POD coverage test (courtesy of PETDANCE)
+
+- Added load tests (courtesy of PETDANCE)
+
+- Added missing POD for:
+
+	G::B::Column::count_numbers
+	G::B::Card::get_all_numbers
+	G::B::Card::splitnumber
+
+- Indented code in POD after tip from RJBS
+
+- Migrated from ExtUtils::MakeMaker to Module::Build
+

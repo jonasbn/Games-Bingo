@@ -1,4 +1,4 @@
-# $Id: bless.t,v 1.2 2003/12/27 10:27:16 jonasbn Exp $
+# $Id: bless.t 1084 2003-12-27 10:27:16Z jonasbn $
 
 use strict;
 use Test::More tests => 100;

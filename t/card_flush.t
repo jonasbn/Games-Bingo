@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: card_flush.t,v 1.2 2004/01/06 20:54:01 jonasbn Exp $
+# $Id: card_flush.t 1096 2004-01-06 20:54:01Z jonasbn $
 
 use strict;
 use Test::More tests => 3;

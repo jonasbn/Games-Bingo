@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: card_resolve_column.t,v 1.1 2004/01/04 20:05:48 jonasbn Exp $
+# $Id: card_resolve_column.t 1090 2004-01-04 20:05:48Z jonasbn $
 
 use strict;
 use Test::More tests => 90;

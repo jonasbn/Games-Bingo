@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo_pulled.t,v 1.2 2004/01/06 21:01:01 jonasbn Exp $
+# $Id: bingo_pulled.t 1097 2004-01-06 21:01:01Z jonasbn $
 
 use strict;
 use Test::More tests => 2;

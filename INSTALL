@@ -1,6 +1,6 @@
 INSTALL file for Games::Bingo
 
-$Id: INSTALL,v 1.5 2003/07/30 17:53:09 jonasbn Exp $
+$Id: INSTALL 1511 2005-03-05 09:38:34Z jonasbn $
 
 INSTALLATION
 
@@ -60,10 +60,15 @@ To install Games::Bingo from CPAN
 
 To install Games::Bingo from tar-ball:
 
-% perl Makefile.PL
+% perl Build.PL
 
-% make
+% ./Build
 
-% make install
+% ./Build test
+
+% ./Build install
+
+To install Games::Bingo from CPAN, the Makefile.PL will trigger and installation 
+of Module::Build.
 
 jonasbn <jonasbn@cpan.org>

@@ -1,6 +1,6 @@
 package Games::Bingo::Column;
 
-# $Id: Column.pm,v 1.12 2003/12/27 10:27:16 jonasbn Exp $
+# $Id: Column.pm 1358 2004-05-29 13:57:14Z jonasbn $
 
 use strict;
 use integer;
@@ -67,6 +67,12 @@ sub get_highest_number {
 	}
 }
 
+sub get_label {
+	my $self = shift;
+	
+	return $self->{label};
+}
+
 1;
 
 __END__
@@ -75,24 +81,19 @@ __END__
 
 Games::Bingo::Column - a column class used for generating bingo cards
 
-=cut
-
 =head1 SYNOPSIS
 
-C<< my $c = Games::Bingo::Column-E<gt>new(); >>
+	my $c = Games::Bingo::Column-E<gt>new();
 
-C<<
-foreach my $number(@numbers) {
-	$c-E<gt>populate($number);
-} >>
+	foreach my $number(@numbers) {
+		$c-E<gt>populate($number);
+	}
 
-C<< my @numbers = qw(1 2 3 4 5 6 7 8 9); >>
+	my @numbers = qw(1 2 3 4 5 6 7 8 9);
 
-C<< my $c = Games::Bingo::Column-E<gt>new(@numbers); >>
+	my $c = Games::Bingo::Column-E<gt>new(@numbers);
 
-C<< my $number = $c-E<gt>get_highest_number(); >>
-
-=cut
+	my $number = $c-E<gt>get_highest_number();
 
 =head1 DESCRIPTION
 
@@ -107,7 +108,7 @@ The class has two attributes:
 
 _array
 
-Array is a list of numbers for containment in the class, since the class
+B<_array> is a list of numbers for containment in the class, since the class
 actually is nothing but an array with a status flag.
 
 =item *
@@ -156,39 +157,37 @@ not shrinking. See also B<get_highest_number>.
 
 The method used by Perls sort to sort the list
 
-=cut
+=head2 get_label
+
+Accessor returning the label of the G::B::Column object.
+
+=head2 count_numbers
+
+Returns the number of numbers contained in a G::B::Column object.
 
 =head1 SEE ALSO
 
 =over 4
 
-=item Games::Bingo
+=item L<Games::Bingo>
 
-=item Games::Bingo::ColumnCollection
+=item L<Games::Bingo::ColumnCollection>
 
 =back
-
-=cut
 
 =head1 TODO
 
 The TODO file contains a complete list for the whole Games::Bingo
 project.
 
-=cut
-
 =head1 AUTHOR
 
 jonasbn E<lt>jonasbn@cpan.orgE<gt>
-
-=cut
 
 =head1 ACKNOWLEDGEMENTS
 
 My friend Allan helped me out with some of the algoritmic stuff and was
 in on the development when this class was thought up.
-
-=cut
 
 =head1 COPYRIGHT
 
