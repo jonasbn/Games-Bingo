@@ -1,13 +1,13 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.8 2003/05/11 18:24:43 jonasbn Exp $
+# $Id: Bingo.pm,v 1.11 2003/05/14 16:36:11 jonasbn Exp $
 
 use strict;
 use integer;
 use POSIX qw(floor);
 use vars qw($VERSION);
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 sub new {
 	my $class = shift;
@@ -59,58 +59,60 @@ Games::Bingo - a Bingo Game Perl implementation
 
 =head1 SYNOPSIS
 
-use Games::Bingo;
+C<< use Games::Bingo; >>
 
-my $bingo = Games::Bingo->new();
+C<< my $bingo = Games::Bingo-E<gt>new(); >>
 
-my @numbers;
+C<< my @numbers; >>
 
-$bingo->init(\@numbers, 90);
+C<< $bingo-E<gt>init(\@numbers, 90); >>
 
-my $number = $bingo->play(\@numbers);
+C<< my $number = $bingo-E<gt>play(\@numbers); >>
 
-$bingo->take(\@taken, $number);
+C<< $bingo-E<gt>take(\@taken, $number); >>
+
+=cut
 
 =head1 DESCRIPTION
 
-This is a simple game of bingo. The program can randomly call out the numbers. 
-The game will be get more features in the future, please refer to the B<TODO> 
-section (below).
+This is a simple game of bingo. The program can randomly call out the
+numbers. The game will be get more features in the future, please refer
+to the B<TODO> section (below).
+
+=cut
 
 =head2 METHODS
 
 This are the central methods of Games::Bingo
 
-=over 4
+=head2 new
 
-=item new ($)
+The constructor is quite simple for now and is only quite proforma, but
+will be put to use later.
 
-The constructor is quite simple for now and is only quite proforma, but will be 
-put to use later.
+=head2 init
 
-=item init ($$$)
+This method takes two parameters. An array reference and a ceiling, the
+method will push numbers onto the array reference from 1 to ceiling
+(including the ceiling). Initializing the numbers for the game.
 
-This method takes two parameters. An array reference and a ceiling, the method 
-will push numbers onto the array reference from 1 to ceiling (including the ceiling). 
-Initializing the numbers for the game.
+=head2 play
 
-=item play ($$)
+The B<play> is one of the essential methods in the game, it takes an
+array reference and returns a random number from the array referenced
+to. The reference shrinks with one with each call.
 
-The B<play> is one of the essential methods in the game, it takes an array reference 
-and returns a random number from the array referenced to. The reference shrinks with 
-one with each call.
+=head2 take
 
-=item take ($$$)
+The B<take> method is the memory of the game. It takes to parameters, a
+reference to an array of arrays (the memory), and additionaly the number
+picked by e.g. the B<play> method.
 
-The B<take> method is the memory of the game. It takes to parameters, a reference to 
-an array of arrays (the memory), and additionaly the number picked by e.g. the B<play> 
-method.
+Since the first program to use the class/module was a console based the
+take method organizes the numbers in an array of array for a nicer
+presentation. This will probably be changed later (if necessary).
 
-Since the first program to use the class/module was a console based the take method 
-organizes the numbers in an array of array for a nicer presentation. This will probably 
-be changed later (if necessary).
-
-=back
+=cut
 
 =head1 SEE ALSO
 
@@ -128,20 +130,28 @@ be changed later (if necessary).
 
 =back
 
+=cut
+
 =head1 TODO
 
-The TODO file contains a complete list for the whole Games::Bingo project.
+The TODO file contains a complete list for the whole Games::Bingo
+project.
+
+=cut
 
 =head1 AUTHOR
 
-jonasbn <jonasbn@io.dk>
+jonasbn E<gt>jonasbn@io.dkE<lt>
+
+=cut
 
 =head1 COPYRIGHT
 
-Games::Bingo and related modules are free software and is released under the 
-Artistic License. See <http://www.perl.com/language/misc/Artistic.html> for 
-details.
+Games::Bingo and related modules are free software and is released under
+the Artistic License. See
+E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn) <jonasbn@io.dk>
+Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+E<gt>jonasbn@io.dkE<lt>
 
 =cut

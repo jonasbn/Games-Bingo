@@ -1,18 +1,6 @@
 TODO for Games::Bingo
 
-$Id: TODO,v 1.3 2003/05/11 15:03:11 jonasbn Exp $
-
-Version 0.01
-
-	- Get it to work??
-	
-	- With printing capabilities
-	
-	- Add Aqua GUI bindings (CamelBones), separate project
-	
-	- Write documentation
-
-Version 0.02
+$Id: TODO,v 1.6 2003/05/13 13:19:38 jonasbn Exp $
 
 	- Encapsulate random function.
 
@@ -37,10 +25,15 @@ Version 0.02
 	
 	- Alter Games::Bingo::Print so the number of plates on a page is a parameter 
 
-Version X?
-
 	- Write a Tk front-end
 	
 	- Implement checksums on plates
 	
 	- Generate plates top-down instead of bottom up
+	  
+	- Escape POD in modules (eliminate podchecker warnings)
+	
+	- Implement suggested Games::Bingo::Bot (suggested by djberg96 on 
+	  use.perl.org)
+	
+	- Update READ me with bin/* files, CamelBones Application 

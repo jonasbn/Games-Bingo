@@ -1,6 +1,6 @@
 package Games::Bingo::Print;
 
-# $Id: Print.pm,v 1.5 2003/05/11 18:13:43 jonasbn Exp $
+# $Id: Print.pm,v 1.6 2003/05/13 15:28:51 jonasbn Exp $
 
 use strict;
 use integer;
@@ -163,17 +163,21 @@ Games::Bingo - PDF Generation Class
 
 =head1 SYNOPSIS
 
-use Games::Bingo::Print;
+C<< use Games::Bingo::Print; >>
 
-my $bp = Games::Bingo::Print->new();
+C<< my $bp = Games::Bingo::Print-E<gt>new(); >>
 
-$bp->print_pages(2);
+C<< $bp-E<gt>print_pages(2); >>
+
+=cut
 
 =head1 DESCRIPTION
 
 This is that actual printing class. It generates PDFs with Bingo plates on them.
 
-=head2 METHODS
+=cut
+
+=head1 METHODS
 
 =head2 new
 
@@ -192,19 +196,27 @@ This is the method used to print the actual plate, it calls print row 3 times.
 
 =over 4
 
-=item y_start_cordinate
+=item *
+
+y_start_cordinate
 
 The B<Y> start cordinate (we print botton up for now).
 
-=item y_end_cordinate
+=item *
+
+y_end_cordinate
 
 The B<Y> end cordinate (we print botton up for now).
 
-=item x_start_cordinate
+=item *
+
+x_start_cordinate
 
 The B<X> start cordinate (we print botton up for now).
 
-=item size
+=item *
+
+size
 
 The pixel size of the box containg the number,
 
@@ -216,27 +228,39 @@ This method prints a single row.
 
 =over 4
 	
-=item y_start_cordinate
+=item *
+
+y_start_cordinate
 
 The B<Y> start cordinate (we print botton up for now).
 
-=item x_start_cordinate
+=item *
+
+x_start_cordinate
 
 The B<X> start cordinate (we print botton up for now).
 
-=item x_end_cordinate
+=item *
+
+x_end_cordinate
 
 The B<X> end cordinate (we print botton up for now),
 
-=item size
+=item *
+
+size
 
 The pixel size of the box containg the number,
 
-=item numbers
+=item *
+
+numbers
 
 The numbers to be insertet into the row as an reference to an array.
 
 =back
+
+=cut
 
 =head1 SEE ALSO
 
@@ -252,22 +276,30 @@ The numbers to be insertet into the row as an reference to an array.
 
 =head1 TODO
 
-The TODO file contains a complete list for the whole Games::Bingo project.
+The TODO file contains a complete list for the whole Games::Bingo
+project.
+
+=cut
 
 =head1 AUTHOR
 
-jonasbn <jonasbn@io.dk>
+jonasbn E<lt>jonasbn@io.dkE<gt>
+
+=cut
 
 =head1 ACKNOWLEDGEMENTS
 
 Thanks to Matt Seargent for suggesting using PDFLib.
 
+=cut
+
 =head1 COPYRIGHT
 
-Games::Bingo and related modules are free software and is released under the 
-Artistic License. See <http://www.perl.com/language/misc/Artistic.html> for 
-details.
+Games::Bingo and related modules are free software and is released under
+the Artistic License. See
+E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn) <jonasbn@io.dk>
+Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+E<lt>jonasbn@io.dkE<gt>
 
 =cut

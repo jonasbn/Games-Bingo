@@ -1,6 +1,6 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm,v 1.8 2003/05/11 18:13:43 jonasbn Exp $
+# $Id: ColumnCollection.pm,v 1.9 2003/05/13 15:28:51 jonasbn Exp $
 
 use strict;
 use integer;
@@ -99,22 +99,22 @@ Games::Bingo::ColumnCollection -  a collection class for holding columns
 
 =head1 SYNOPSIS
 
-my $col = Games::Bingo::ColumnCollection->new();
+C<< my $col = Games::Bingo::ColumnCollection-E<gt>new(); >>
 
-my $c = Games::Bingo::Column->new(0, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+C<< my $c = Games::Bingo::Column-E<gt>new(0, [1, 2, 3, 4, 5, 6, 7, 8, 9]); >>
 
-$col->add_column($c1);
+C<< $col-E<gt>add_column($c1); >>
 
-my $d = $col->get_column(1);
+C<< my $d = $col-E<gt>get_column(1); >>
 
-my $e = $col->get_random_column();
+C<< my $e = $col-E<gt>get_random_column(); >>
 
 =cut
 
 =head1 DESCRIPTION
 
-The ColumnCollection is used when building the bingo plates and is a temporary 
-data structure for holding object of the class Column.
+The ColumnCollection is used when building the bingo plates and is a
+temporary data structure for holding object of the class Column.
 
 The class is an encapsulated array, which is 1 indexed.
 
@@ -122,16 +122,18 @@ The class is an encapsulated array, which is 1 indexed.
 
 =head1 METHODS
 
-=head2 new ($)
+=head2 new
 
 The constructor blesses and array and returns.
 
-=head2 divide ($$@) 
+=head2 divide
 
-The divided method has nothing as such to do with the class apart from it is a 
-helper method, which is used to taking a list of numbers (1-90 expected, see Games::Bingo).
+The divided method has nothing as such to do with the class apart from
+it is a helper method, which is used to taking a list of numbers (1-90
+expected, see Games::Bingo).
 
-It then divided this list into 9 separate arrays of the following constallations:
+It then divided this list into 9 separate arrays of the following
+constallations:
 
 =over 4
 
@@ -173,40 +175,43 @@ It then divided this list into 9 separate arrays of the following constallations
 
 =back
 
-From these arrays the Columns are built and the column collection is slowly 
-populated, when done the column collection is returned.
+From these arrays the Columns are built and the column collection is
+slowly populated, when done the column collection is returned.
 
 =cut
 
-=head2 add_column ($$)
+=head2 add_column
 
-This is a push like method, is can be used to add an additional to the collection.
+This is a push like method, is can be used to add an additional to the
+collection.
 
-=head2 remove_column ($$)
+=head2 remove_column
 
-The method can remove a column specified by its index, the argument specifies 
-this index.
+The method can remove a column specified by its index, the argument
+specifies this index.
 
-=head2 get_column ($$)
+=head2 get_column
 
-The method returns a column specified by its index, the argument to this method 
-is the index.
+The method returns a column specified by its index, the argument to this
+method is the index.
 
-The second argument is an indicator of whether the returned collection should be 
-removed from the list, B<1> for removed and B<0> for not removing, the latter is 
-the default.
+The second argument is an indicator of whether the returned collection
+should be removed from the list, B<1> for removed and B<0> for not
+removing, the latter is the default.
 
-=head2 get_random_column ($;$)
+=head2 get_random_column
 
-This method returns a random columns, the optional parameter can be used to indicate 
-whether the column should be removed from the list. B<1> indicates a removed and 
-nothing (the default) that nothing should be done.
+This method returns a random columns, the optional parameter can be used
+to indicate whether the column should be removed from the list. B<1>
+indicates a removed and nothing (the default) that nothing should be
+done.
 
-=head2 reset_columns ($$)
+=head2 reset_columns
 
-The method uses the fact that the class contains Columns and a bit of polymorphy, 
-so this method can be used to set the status of all Columns contained in the class. '
-The parameter is the status which you want to set, either B<1> or B<0>.
+The method uses the fact that the class contains Columns and a bit of
+polymorphy, so this method can be used to set the status of all Columns
+contained in the class. ' The parameter is the status which you want to
+set, either B<1> or B<0>.
 
 =head1 SEE ALSO
 
@@ -224,23 +229,25 @@ Games::Bingo::Column
 
 =head1 TODO
 
-The TODO file contains a complete list for the whole Games::Bingo project.
+The TODO file contains a complete list for the whole Games::Bingo
+project.
 
 =head1 AUTHOR
 
-jonasbn <jonasbn@io.dk>
+jonasbn E<lt>jonasbn@io.dkE<gt>
 
 =head1 ACKNOWLEDGEMENTS
 
-My friend Allan helped me out with some of the algoritmic stuff and was in when 
-this class was thought up.
+My friend Allan helped me out with some of the algoritmic stuff and was
+in when this class was thought up.
 
 =head1 COPYRIGHT
 
-Games::Bingo and related modules are free software and is released under the 
-Artistic License. See <http://www.perl.com/language/misc/Artistic.html> for 
-details.
+Games::Bingo and related modules are free software and is released under
+the Artistic License. See
+E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn) <jonasbn@io.dk>
+Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+E<lt>jonasbn@io.dkE<gt>
 
 =cut

@@ -1,19 +1,32 @@
 README for Games::Bingo
 
-$Id: README,v 1.3 2003/05/11 18:13:43 jonasbn Exp $
+$Id: README,v 1.4 2003/05/14 16:35:00 jonasbn Exp $
 
 This collection of modules and programs comes from when I got the idea
 that I had never programed a bingo game for my computer. I got inpired
 by playing and actual physical bingo game and I though to myself -
 that's easy to implement and yes it was.
 
-But now the project has grown, and the next natural step was to make the
-progam able to print its own bingo plates, Matt Saergant suggested using
-PDFLib.
+in the bin directory is located a simple console based bingo game
+application called bingo.pl
+
+But since the project has grown, and the next natural step was to make
+the progam able to print its own bingo plates, Matt Saergant suggested
+using PDFLib and for providing me with an working example.
+
+in the bin directory is also located a plate printing console
+application called bingo_plates.pl
 
 Well not even having the PDF part in place I got the crazy idea of
 implementing an Aqua GUI for the program, which would give the code a
 nice separation having both a console version and a GUI version.
+
+This can be downloaded from my homepage:
+
+http://usr.bin.dk/~jonasbn/osx/CamelBingo.tgz
+
+It is a CamelBones based OSX application, for now it is just a GUI
+version of the console game and it is still under development.
 
 Anyway - have fun
 
@@ -23,4 +36,4 @@ http://rt.cpan.org or bug-Games-Bingo@rt.cpan.org
 
 Thanks,
 
-jonasbn <jonasbn@io.dk>
+jonasbn <jonasbn@io.dk>, Copenhagen 13th. May 2003

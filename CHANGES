@@ -1,15 +1,15 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.3 2003/05/11 18:13:43 jonasbn Exp $
+$Id: CHANGES,v 1.4 2003/05/13 15:28:51 jonasbn Exp $
 
-0.01 Released 10th. of May
+0.01 Released 10th. of May 2003 
 
   - Project setup, all the files and prototypes, lots of programming
     etc.
   
   - Renamed prior versions to 0.01. - Please see the BUGS
 
-0.02 
+0.02 Release 11th. of May 2003 (no update necessary)
 
   - Fixed broken POD in Games::Bingo::Print
    
@@ -28,4 +28,4 @@ $Id: CHANGES,v 1.3 2003/05/11 18:13:43 jonasbn Exp $
   
 0.03
 
-  - Please see the TODO or the BUGS file
+  - Cleaned up all the POD (no warnings)

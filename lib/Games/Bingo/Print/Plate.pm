@@ -1,6 +1,6 @@
 package Games::Bingo::Print::Plate;
 
-# $Id: Plate.pm,v 1.5 2003/05/11 18:13:43 jonasbn Exp $
+# $Id: Plate.pm,v 1.6 2003/05/13 15:28:52 jonasbn Exp $
 
 use strict;
 use integer;
@@ -153,18 +153,24 @@ __END__
 
 Games::Bingo::Print::Plate - Bingo plate class for PDF generation 
 
+=cut
+
 =head1 SYNOPSIS
 
-use Games::Bingo::Print::Plate;
+C<< use Games::Bingo::Print::Plate; >>
 
-my $p = Games::Bingo::Print::Plate->new();
+C<< my $p = Games::Bingo::Print::Plate-E<gt>new(); >>
 
-$p->populate();
+C<< $p-E<gt>populate(); >>
+
+=cut
 
 =head1 DESCRIPTION
 
-This Games::Bingo::Print::Plate class (Plate for now) is a simple holder used 
-to hold the generated bingo plates before they are printed.
+This Games::Bingo::Print::Plate class (Plate for now) is a simple holder
+used to hold the generated bingo plates before they are printed.
+
+=cut
 
 =head2 METHODS
 
@@ -176,40 +182,48 @@ The constructor, takes no arguments.
 
 =item populate
 
-This method is the main method of the class. It populates the object with a 
-plate of 12 random numbers which can be printed using the Games::Bingo::Print
-class.
+This method is the main method of the class. It populates the object
+with a plate of 12 random numbers which can be printed using the
+Games::Bingo::Print class.
 
 =item _init
 
-Init uses the function in Games::Bingo::Column and 
-Games::Bingo::ColumnCollection, which are use to generate the necessary random 
-numbers to generate the plate and set the them in the necessary columns.
+Init uses the function in Games::Bingo::Column and
+Games::Bingo::ColumnCollection, which are use to generate the necessary
+random numbers to generate the plate and set the them in the necessary
+columns.
 
 =item _populate
 
-This is the private method which is used to populate the plate in the Plate 
-class.
+This is the private method which is used to populate the plate in the
+Plate class.
 
-Populate takes to arguments, the row and the number, it resolves the column using B<_resolve_column>.
+Populate takes to arguments, the row and the number, it resolves the
+column using B<_resolve_column>.
 
 =item _resolve_column
 
-Resolve column is method used to resolve where on the plate a specified number 
-should go. It takes a number and returns an integer indicating a column.
+Resolve column is method used to resolve where on the plate a specified
+number should go. It takes a number and returns an integer indicating a
+column.
 
 =item _integrity_check
 
-This method is a part of the work-around, which was made in the B<populate> 
-method, it checks whether the populated Plate holds 12 numbers return a boolean 
-value indicating succes or failure.
+This method is a part of the work-around, which was made in the
+B<populate> method, it checks whether the populated Plate holds 12
+numbers return a boolean value indicating succes or failure.
 
 =back
 
+=cut
+
 =head1 BUGS
 
-This class contains a bug in B<populate>, which is regarded a design flaw. 
-A work around have implemented. No other bugs are known at the time of writing.
+This class contains a bug in B<populate>, which is regarded a design
+flaw. A work around have implemented. No other bugs are known at the
+time of writing.
+
+=cut
 
 =head1 SEE ALSO
 
@@ -225,16 +239,21 @@ A work around have implemented. No other bugs are known at the time of writing.
 
 =back
 
+=cut
+
 =head1 AUTHOR
 
-jonasbn <jonasbn@io.dk>
+jonasbn E<lt>jonasbn@io.dkE<gt>
+
+=cut
 
 =head1 COPYRIGHT
 
-Games::Bingo and related modules are free software and is released under the 
-Artistic License. See <http://www.perl.com/language/misc/Artistic.html> for 
-details.
+Games::Bingo and related modules are free software and is released under
+the Artistic License. See
+E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn) <jonasbn@io.dk>
+Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+E<lt>jonasbn@io.dkE<gt>
 
 =cut
