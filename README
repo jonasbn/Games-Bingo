@@ -1,6 +1,6 @@
 README for Games::Bingo
 
-$Id: README,v 1.6 2003/05/16 12:02:09 jonasbn Exp $
+$Id: README,v 1.7 2003/07/30 17:53:09 jonasbn Exp $
 
 INSTALLATION
 
@@ -14,11 +14,11 @@ REQUIREMENTS
  
  - Some pens or small pieces of paper which can be used by the player to
    mark the number on their cards (avoid using permanent markers if you
-   want to reuse the plates or run several games in a row).
+   want to reuse the cards or run several games in a row).
 
 SETUP
 
-use the programme bingo_plates.pl located in the bin direcitory to
+use the programme bingo_print.pl located in the bin direcitory to
 generate the number of pages you require (one for each player). Each
 page holds 3 cards. 
 
@@ -72,11 +72,11 @@ in the bin directory is located a simple console based bingo game
 application called bingo.pl
 
 But since the project has grown, and the next natural step was to make
-the progam able to print its own bingo plates, Matt Saergant suggested
+the progam able to print its own bingo cards, Matt Saergant suggested
 using PDFLib and for providing me with an working example.
 
-in the bin directory is also located a plate printing console
-application called bingo_plates.pl
+in the bin directory is also located a card printing console
+application called bingo_print.pl
 
 Well not even having the PDF part in place I got the crazy idea of
 implementing an Aqua GUI for the program, which would give the code a
@@ -97,4 +97,4 @@ http://rt.cpan.org or bug-Games-Bingo@rt.cpan.org
 
 Thanks,
 
-jonasbn <jonasbn@io.dk>, Copenhagen 13th. May 2003
+jonasbn <jonasbn@cpan.org>, Copenhagen 13th. May 2003

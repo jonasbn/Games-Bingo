@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo.pl,v 1.5 2003/05/16 09:59:01 jonasbn Exp $
+# $Id: bingo.pl,v 1.6 2003/07/30 17:53:11 jonasbn Exp $
 
 use strict;
 use lib qw(../lib/ lib);
@@ -81,8 +81,9 @@ bingo.pl
 
 =head1 DESCRIPTION
 
-This is a console bingo game application. With bingo_plates.pl you can
-generate bingo_plates.pl and they you are actually ready to play.
+This is a console bingo game application. With bingo_print.pl from
+Games::Bingo::Print you can generate cards and they you are actually
+ready to play.
 
 =cut
 
@@ -92,7 +93,7 @@ generate bingo_plates.pl and they you are actually ready to play.
 
 =item Games::Bingo
 
-=item bin/bingo_plates.pl
+=item Games::Bingo::Print
 
 =back
 
@@ -107,7 +108,7 @@ project.
 
 =head1 AUTHOR
 
-jonasbn E<gt>jonasbn@io.dkE<lt>
+jonasbn E<gt>jonasbn@cpan.orgE<lt>
 
 =cut
 
@@ -118,6 +119,6 @@ the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
 Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
-E<gt>jonasbn@io.dkE<lt>
+E<gt>jonasbn@cpan.orgE<lt>
 
 =cut

@@ -1,14 +1,15 @@
 package Games::Bingo::Column;
 
-# $Id: Column.pm,v 1.10 2003/05/15 23:01:14 jonasbn Exp $
+# $Id: Column.pm,v 1.11 2003/07/30 17:53:11 jonasbn Exp $
 
 use strict;
 use integer;
 use lib qw(../lib lib);
 use Games::Bingo;
-use vars qw(@ISA);
+use vars qw(@ISA $VERSION);
 
 @ISA = qw(Games::Bingo);
+$VERSION = '0.01';
 
 sub new {
 	my $class = shift;
@@ -71,7 +72,7 @@ __END__
 
 =head1 NAME
 
-Games::Bingo::Column - a column class used for generating bingo plates
+Games::Bingo::Column - a column class used for generating bingo cards
 
 =cut
 
@@ -96,7 +97,7 @@ C<< my $c-E<gt>set_status(1); >>
 
 =head1 DESCRIPTION
 
-The Column is used when building the bingo plates and is a temporary
+The Column is used when building the bingo cards and is a temporary
 data structure.
 
 The class has two attributes:
@@ -115,7 +116,7 @@ actually is nothing but an array with a status flag.
 _status 
 
 The status attribute is a flag indicating whether the collection has
-been used during the generation of bingo plates, please refer to the
+been used during the generation of bingo cards, please refer to the
 accessor set_status for more information.
 
 =back
@@ -179,7 +180,7 @@ project.
 
 =head1 AUTHOR
 
-jonasbn E<lt>jonasbn@io.dkE<gt>
+jonasbn E<lt>jonasbn@cpan.orgE<gt>
 
 =cut
 
@@ -197,6 +198,6 @@ the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
 Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
-E<lt>jonasbn@io.dkE<gt>
+E<lt>jonasbn@cpan.orgE<gt>
 
 =cut

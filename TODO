@@ -1,52 +1,12 @@
 TODO for Games::Bingo
 
-$Id: TODO,v 1.16 2003/06/25 22:04:15 jonasbn Exp $
+$Id: TODO,v 1.21 2003/07/30 18:19:47 jonasbn Exp $
 
-- Separate Games::Bingo into Games::Bingo and Games::Bingo::Print
-  modules
+- Write a Tk front-end?
 
-- The generated PDF could use some fine-tuning
-
-- Restructurize tests for easier identification
-
-- Write tests for the _integrity_check method in
-  Games::Bingo::Print::Plate
-
-- Alter Games::Bingo::Print so the number of plates on a page is a
-  parameter, requires plates are drawn top-dows (see below)
-
-- Write a Tk front-end
-
-- Implement checksums on plates, necessary for making an online game
-
-- Generate plates top-down instead of bottom up
-
-- Implement suggested Games::Bingo::Bot (suggested by djberg96 on
-  use.perl.org)
-
-- Rename plates to cards? (which is the true english word for a bingo
-  plate, heh)
+- Implement checksums on cards? - necessary for making an online game
   
-- Rename take to pull perhaps? - I am not really into the bingo terms in 
-  english.
+- Add cover test of Games::Bingo (see t/Cover.t), Devel::Cover does not
+  run under 5.6.0 (Perl >5.6.0)
 
-- Add generation of master plate (all numbers) on paper for the referee?
-  (see bin/bingo.pl)
-
-- Get Games::Bingo to work with PDFLib-lite. The open source version of
-  PDFLib which seem to be the free part of the future PDFLib.
-  
-- Additional tests of the new methods in Games::Bingo (see
-  CHANGES and release 0.05)
-
-- Should the game handle Bingos for one row and two rows and not only
-  the full card?
-  
-- Clean up the trouble in conjunction with the Games::Bingo::Card class
-  It has to have another bingo object and not the one for the current game.
-  
-  or play should be called without really pulling the numbers
-  
-  or $bingo should be cloned (perhaps using my Object::Clone
-
-- Remove test.pl (obsoleted a loooooong time ago)
+- Write a Windows .NET front-end?

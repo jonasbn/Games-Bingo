@@ -1,16 +1,17 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm,v 1.14 2003/05/16 08:57:46 jonasbn Exp $
+# $Id: ColumnCollection.pm,v 1.15 2003/07/30 17:53:11 jonasbn Exp $
 
 use strict;
 use integer;
 use lib qw(lib ../lib);
 use Games::Bingo;
 use Games::Bingo::Column;
-use vars qw(@ISA);
+use vars qw(@ISA $VERSION);
 use Data::Dumper;
 
 @ISA = qw(Games::Bingo);
+$VERSION = '0.01';
 
 sub new {
 	my $class = shift;
@@ -138,7 +139,7 @@ C<< my $e = $col-E<gt>get_random_column(); >>
 
 =head1 DESCRIPTION
 
-The ColumnCollection is used when building the bingo plates and is a
+The ColumnCollection is used when building the bingo cards and is a
 temporary data structure for holding object of the class Column.
 
 The class is an encapsulated array, which is 1 indexed.
@@ -255,7 +256,7 @@ project.
 
 =head1 AUTHOR
 
-jonasbn E<lt>jonasbn@io.dkE<gt>
+jonasbn E<lt>jonasbn@cpan.orgE<gt>
 
 =head1 ACKNOWLEDGEMENTS
 
@@ -269,6 +270,6 @@ the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
 Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
-E<lt>jonasbn@io.dkE<gt>
+E<lt>jonasbn@cpan.orgE<gt>
 
 =cut

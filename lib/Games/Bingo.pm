@@ -1,13 +1,13 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.16 2003/06/25 22:04:16 jonasbn Exp $
+# $Id: Bingo.pm,v 1.17 2003/07/27 20:21:06 jonasbn Exp $
 
 use strict;
 use integer;
 use POSIX qw(floor);
 use vars qw($VERSION);
 
-$VERSION = '0.05';
+$VERSION = '0.06';
 
 sub new {
 	my ($class, $ceiling) = @_;
@@ -80,7 +80,7 @@ sub _all_pulled {
 sub pull {
 	my ($self, $number) = @_;
 	
-	$self->take($self->{'_pulled'}, $number);
+	return $self->take($self->{'_pulled'}, $number);
 }
 
 sub take {
@@ -89,7 +89,7 @@ sub take {
     my $take_modified = sprintf("%02d", $take);
     my ($x, $y) = $take_modified =~ m/^(\d{1})(\d{1})$/o;
 
-    $taken->[$x][$y] = $take_modified;
+     return $taken->[$x][$y] = $take_modified;
 }
 
 sub random {
@@ -118,7 +118,7 @@ C<< my $number = $bingo-E<gt>play(); >>
 
 C<< my @taken; >>
 
-C<< $bingo-E<gt>take(\@taken, $number); >>
+C<< $bingo-E<gt>pull(\@pulled, $number); >>
 
 or
 
@@ -226,7 +226,9 @@ A clumsy alias/"overload" implementation of the take method.
 
 =item Games::Bingo::Print
 
-=item Games::Bingo::Print::Plate
+=item Games::Bingo::Print::Card
+
+=item Games::Bingo::Bot
 
 =item bin/bingo.pl
 

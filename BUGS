@@ -1,6 +1,6 @@
 Known BUGS in Games::Bingo (and issues)
 
-$Id: BUGS,v 1.10 2003/06/25 22:04:15 jonasbn Exp $
+$Id: BUGS,v 1.11 2003/07/21 15:17:07 jonasbn Exp $
 
 Alpha
 
@@ -78,3 +78,7 @@ Alpha
  - No known bugs
 
 0.05
+
+ - No known bugs
+
+0.06

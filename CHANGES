@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.14 2003/06/25 22:04:15 jonasbn Exp $
+$Id: CHANGES,v 1.17 2003/07/30 17:53:09 jonasbn Exp $
 
 0.01 Released 10th. of May 2003 
 
@@ -78,3 +78,36 @@ $Id: CHANGES,v 1.14 2003/06/25 22:04:15 jonasbn Exp $
 
 - Cleaned a few POD mistakes (escapes) and added some simple docs on
   the new methods
+
+0.06 Not Released Yet
+
+ - Separation of Games::Bingo::Print out from Games::Bingo. This means
+   the following files have been moved out from the Games::Bingo
+   distribution:
+   
+    bin/bingo_plates.pl
+    lib/Games/Bingo/Print.pm
+    lib/Games/Bingo/Print/Plate.pm
+   	t/Print.t
+   	t/Plate.t
+   	t/Plate2.t
+   
+   And the TODO have been cleaned up (Print tasks have been moved to
+   Games::Bingo::Print TODO)
+ 
+ - Removed test.pl
+ 
+ - Added t/cover.t which can be used for coverage test
+ 
+ - Added t/basic2.t holding test of pull
+
+ - Added $VERSION variable to remaining modules
+ 
+ - Renamed plates to cards (proper english)
+ 
+ - Exchanged personal email address for CPAN address
+ 
+ - Additional tests of the new methods in Games::Bingo (SEE
+   CHANGES, release 0.05 and t/basic2.t)
+  
+ 
