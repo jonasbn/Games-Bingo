@@ -1,60 +1,80 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.11 2003/05/16 10:24:39 jonasbn Exp $
+$Id: CHANGES,v 1.14 2003/06/25 22:04:15 jonasbn Exp $
 
 0.01 Released 10th. of May 2003 
 
-  - Project setup, all the files and prototypes, lots of programming
-    etc.
-  
-  - Renamed prior versions to 0.01. - Please see the BUGS
+- Project setup, all the files and prototypes, lots of programming etc.
+
+- Renamed prior versions to 0.01. - Please see the BUGS
 
 0.02 Released 11th. of May 2003 (no update necessary)
 
-  - Fixed broken POD in Games::Bingo::Print
-   
-  - Fixed [cpan #2552] README and INSTALL have too long lines, hard
-    wrapped at 72
+- Fixed broken POD in Games::Bingo::Print
 
-  - Fixed [cpan #2553] Information on bug-reporting included in the
-    README
-  
-  - Added descriptions to all POD NAME sections
-  
-  - Removed all prototypes
-  
-  - Added references to programs in bin/
-  
-  - Added more material to SYNOPSIS sections
-  
+- Fixed [cpan #2552] README and INSTALL have too long lines, hard
+  wrapped at 72
+
+- Fixed [cpan #2553] Information on bug-reporting included in the
+  README
+
+- Added descriptions to all POD NAME sections
+
+- Removed all prototypes
+
+- Added references to programs in bin/
+
+- Added more material to SYNOPSIS sections
+
 0.03 Released 14th. of May 2003 (no update necessary)
 
-  - Cleaned up all the POD (no warnings)
-  
-  - Update READ me with bin/* files, CamelBones Application 
+- Cleaned up all the POD (no warnings)
 
-  - Added docs to the bin/* files.
+- Update READ me with bin/* files, CamelBones Application
+
+- Added docs to the bin/* files.
 
 0.04 Released 16th. of May 2003 (no update necessary)
 
-  - Fixed the NAME section in Games::Bingo::Print, this should clear out
-    the last bug
+- Fixed the NAME section in Games::Bingo::Print, this should clear out
+  the last bug
 
-  - Encapsulated the random function.
+- Encapsulated the random function.
+
+- Add possibility of providing a complete array of Columns to the
+  constructor in Games::Bingo::ColumnCollection.
+
+- Add an assertion to the get_column method in
+  Games::Bingo::ColumnCollection so illegal numbers issue a warning.
+
+- Add assertion to the remove_column method in
+  Games::Bingo::ColumnCollection so illegal numbers issue a warning.
+
+- Improved constructor in Games::Bingo so use of init can be avoided,
+  backwards compability is preserved (for now)
+
+- bin/bingo.pl changed to use of constructor with ceiling parameter
+  (the new way)
+
+- Included the rules of the game of bingo in the README
+
+0.05 Released 25th. of June 2003 (no update necessary)
+
+- Added t/pod.t, one more requirement, have a look at: 
+  http://use.perl.org/~petdance/journal/12391
   
-  - Add possibility of providing a complete array of Columns to the
-    constructor in Games::Bingo::ColumnCollection.
+- Updated the INSTALL guide by request with information on PDFLib
+  installation
+
+- Implemented integration with Games::Bingo::Bot, introducing new
+  class: Games::Bingo::Card
   
-  - Add an assertion to the get_column method in
-    Games::Bingo::ColumnCollection so illegal numbers issue a warning.
-    
-  - Add assertion to the remove_column method in
-    Games::Bingo::ColumnCollection so illegal numbers issue a warning.
-    
-  - Improved constructor in Games::Bingo so use of init can be avoided,
-    backwards compability is preserved (for now)
+- Implemented new methods in Games::Bingo: pulled, _all_pulled and pull
+
+- Implemented internal structure in Games::Bingo to hold the taken 
+  numbers, now referred to as pulled
   
-  - bin/bingo.pl changed to use of constructor with ceiling parameter
-    (the new way)
-  
-  - Included the rules of the game of bingo in the README
+- This release is require by Games::Bingo::Bot 0.01 (just released)
+
+- Cleaned a few POD mistakes (escapes) and added some simple docs on
+  the new methods

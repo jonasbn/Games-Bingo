@@ -24,4 +24,5 @@ t/autosplice2.t
 t/basic.t
 t/divide.t
 t/flow.t
+t/pod.t
 test.pl

@@ -1,6 +1,6 @@
 TODO for Games::Bingo
 
-$Id: TODO,v 1.13 2003/05/16 10:28:43 jonasbn Exp $
+$Id: TODO,v 1.16 2003/06/25 22:04:15 jonasbn Exp $
 
 - Separate Games::Bingo into Games::Bingo and Games::Bingo::Print
   modules
@@ -32,3 +32,21 @@ $Id: TODO,v 1.13 2003/05/16 10:28:43 jonasbn Exp $
 
 - Add generation of master plate (all numbers) on paper for the referee?
   (see bin/bingo.pl)
+
+- Get Games::Bingo to work with PDFLib-lite. The open source version of
+  PDFLib which seem to be the free part of the future PDFLib.
+  
+- Additional tests of the new methods in Games::Bingo (see
+  CHANGES and release 0.05)
+
+- Should the game handle Bingos for one row and two rows and not only
+  the full card?
+  
+- Clean up the trouble in conjunction with the Games::Bingo::Card class
+  It has to have another bingo object and not the one for the current game.
+  
+  or play should be called without really pulling the numbers
+  
+  or $bingo should be cloned (perhaps using my Object::Clone
+
+- Remove test.pl (obsoleted a loooooong time ago)

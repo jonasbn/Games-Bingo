@@ -1,19 +1,20 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.14 2003/05/16 09:59:01 jonasbn Exp $
+# $Id: Bingo.pm,v 1.16 2003/06/25 22:04:16 jonasbn Exp $
 
 use strict;
 use integer;
 use POSIX qw(floor);
 use vars qw($VERSION);
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 
 sub new {
 	my ($class, $ceiling) = @_;
 	
 	my $self = bless {
 		_numbers => [],
+		_pulled  => [[],[],[],[],[],[],[],[],[],],
 	}, $class || ref $class;
 
 	if ($ceiling) {
@@ -21,6 +22,7 @@ sub new {
 		$self->init(\@ary, $ceiling);
 		push @{$self->{'_numbers'}}, @ary; 
 	}
+	
 	return $self;
 }
 
@@ -28,7 +30,7 @@ sub init {
 	my ($self, $numbers, $ceiling) = @_;
 	
 	for(my $i = 1; $i < ($ceiling + 1); $i++) { 
-		push @{$numbers}, $i; 
+		push @{$numbers}, $i;
 	}
 }
 
@@ -45,7 +47,40 @@ sub play {
 		$number = $self->{'_numbers'}->[$index];
 		splice(@{$self->{'_numbers'}},  $index, 1);
 	}
+	$self->pull($number);
+	
 	return $number;
+}
+
+sub pulled {
+	my ($self, $number) = @_;
+	
+	my @pulled = $self->_all_pulled();
+	
+	if ($pulled[$number]) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub _all_pulled {
+	my $self = shift;
+	
+	my @pulled = ();
+	foreach my $row (@{$self->{'_pulled'}}) {		
+		foreach my $number (@{$row}) {
+			push(@pulled, $number) if $number;
+		}
+	}
+	
+	return @pulled;
+}
+
+sub pull {
+	my ($self, $number) = @_;
+	
+	$self->take($self->{'_pulled'}, $number);
 }
 
 sub take {
@@ -162,6 +197,25 @@ The result is rounded down using POSIX::floor
 
 =cut
 
+=head2 pulled
+
+A method which return 1 or 0 indicating true or false, whether the
+number given as a parameter has been pulled. 
+
+=cut
+
+=head2 _all_pulled
+
+A method which returns all pulled numbers as an array.
+
+=cut
+
+=head2 pull
+
+A clumsy alias/"overload" implementation of the take method.
+
+=cut
+
 =head1 SEE ALSO
 
 =over 4
@@ -189,7 +243,7 @@ project.
 
 =head1 AUTHOR
 
-jonasbn E<gt>jonasbn@io.dkE<lt>
+jonasbn E<lt>jonasbn@cpan.orgE<gt>
 
 =cut
 
@@ -200,6 +254,6 @@ the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
 Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
-E<gt>jonasbn@io.dkE<lt>
+E<lt>jonasbn@cpan.orgE<gt>
 
 =cut

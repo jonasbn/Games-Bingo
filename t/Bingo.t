@@ -1,10 +1,10 @@
 #!/usr/local/bin/perl -w
 
-# $Id: Bingo.t,v 1.2 2003/05/16 09:59:01 jonasbn Exp $
+# $Id: Bingo.t,v 1.3 2003/06/05 20:12:28 jonasbn Exp $
 
 use strict;
 use lib qw(lib ../lib);
-use Test::More tests => 4;
+use Test::More tests => 6;
 use Data::Dumper;
 
 #test 1-2
@@ -21,3 +21,17 @@ is(scalar @numbers, 90, 'Testing the initialized numbers array');
 #test 4
 my $bingo2 = Games::Bingo->new(90);
 is(scalar @{$bingo2->{'_numbers'}}, 90, 'Testing the initialized numbers array');
+
+#test 5
+my $number = $bingo2->play();
+$bingo2->pull($number);
+
+my @pulled = $bingo2->_all_pulled();
+is(scalar @pulled, 1, 'Testing _all_pulled'); 
+
+#test 6
+$number = $bingo2->play();
+$bingo2->pull($number);
+
+@pulled = $bingo2->_all_pulled();
+is(scalar @pulled, 2, 'Testing _all_pulled'); 

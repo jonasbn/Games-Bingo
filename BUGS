@@ -1,6 +1,6 @@
 Known BUGS in Games::Bingo (and issues)
 
-$Id: BUGS,v 1.9 2003/05/15 05:29:44 jonasbn Exp $
+$Id: BUGS,v 1.10 2003/06/25 22:04:15 jonasbn Exp $
 
 Alpha
 
@@ -72,3 +72,9 @@ Alpha
 0.03
  
  -  Games::Bingo::Print POD is not browsable at CPAN, it is still broken.
+
+0.04
+
+ - No known bugs
+
+0.05
