@@ -21,5 +21,4 @@ t/basic2.t
 t/divide.t
 t/flow.t
 t/pod.t
-t/Cover.t
 t/Card.t

@@ -1,84 +1,95 @@
 Known BUGS in Games::Bingo (and issues)
 
-$Id: BUGS,v 1.11 2003/07/21 15:17:07 jonasbn Exp $
+$Id: BUGS,v 1.13 2003/08/02 09:41:47 jonasbn Exp $
 
 Alpha
 
- -  Plate.pm line 120 dies once in a while because the handling of the 
-	collection is not working as expected.
+-  Plate.pm line 120 dies once in a while because the handling of the 
+   collection is not working as expected.
 
-	my $number = $c->get_number();
+   my $number = $c->get_number();
 
-	FIXED
+   FIXED
 	
- -  The sort of the column does apparently not work or maybe I use it the 
-    wrong way
+-  The sort of the column does apparently not work or maybe I use it the 
+   wrong way
     
-    FIXED
+   FIXED
  
- -  The plate population algoritm seems to have a flaw in that sense that if 
-    we end up with a situation where we have to populate the last row with 
-    two numbers from the same series, the plate will lack a number or two.
+-  The plate population algoritm seems to have a flaw in that sense that if 
+   we end up with a situation where we have to populate the last row with 
+   two numbers from the same series, the plate will lack a number or two.
     
-    FIXED (work-around implemented)
+   FIXED (work-around implemented)
 
 0.01
 
- -  Long lines in the text files (README, INSTALL etc) should probably be 
-    wrapped down to 72 chars or so, to increase readability.
+-  Long lines in the text files (README, INSTALL etc) should probably be 
+   wrapped down to 72 chars or so, to increase readability.
     
-    [cpan #2552] <URL: https://rt.cpan.org/Ticket/Display.html?id=2552 >
+   [cpan #2552] <URL: http://rt.cpan.org/NoAuth/Bug.html?id=2552 >
     
-    FIXED
+   FIXED
  
- -  http://rt.cpan.org and bug-Games-Bingo@rt.cpan.org should be mentioned as
-    bug reporting interface.
+-  http://rt.cpan.org and bug-Games-Bingo@rt.cpan.org should be mentioned as
+   bug reporting interface.
 
-    [cpan #2553] <URL: https://rt.cpan.org/Ticket/Display.html?id=2553 >
+   [cpan #2553] <URL: http://rt.cpan.org/NoAuth/Bug.html?id=2553 >
 
-	DONE
+   DONE
     
- -  The modules have no abstract (In NAME, one usually puts 
- 	"Module::Name - Module that does something)
+-  The modules have no abstract (In NAME, one usually puts 
+   "Module::Name - Module that does something)
  	
- 	DONE
+   DONE
  
- -  Prototypes should be removed
+-  Prototypes should be removed
  
-    Prototypes are used for methods. That's useless, since they're ignored for 
-    runtime thingies. Besides that, have a look at: 
-    "Far More Than Everything You've Ever Wanted to Know about Prototypes in Perl"
+   Prototypes are used for methods. That's useless, since they're ignored for 
+   runtime thingies. Besides that, have a look at: 
+   "Far More Than Everything You've Ever Wanted to Know about Prototypes in Perl"
     
     <http://www.perl.com/pub/a/language/misc/fmproto.html >
     
-    DONE
+   DONE
    
- -  Some POD is broken otherwise (if you use multiple angle brackets, you must 
-    also use whitespace!)
+-  Some POD is broken otherwise (if you use multiple angle brackets, you must 
+   also use whitespace!)
 
-	CLEANED OUT
+   CLEANED OUT
     
- -  Games::Bingo::Print POD is not browsable at CPAN, it is broken.
+-  Games::Bingo::Print POD is not browsable at CPAN, it is broken.
  
- 	*** ERROR: =over on line 172 without closing =back (at head2) at line 174 in file 
- 	lib/Games/Bingo/Print.pm
+   *** ERROR: =over on line 172 without closing =back (at head2) at line 174 in file 
+   lib/Games/Bingo/Print.pm
 
-	FIXED
+   FIXED
 
 0.02
 
- -  POD is =cut and then immediately continued... (from Juerd use.perl.org)
+-  POD is =cut and then immediately continued... (from Juerd use.perl.org)
  
 0.03
  
- -  Games::Bingo::Print POD is not browsable at CPAN, it is still broken.
+-  Games::Bingo::Print POD is not browsable at CPAN, it is still broken.
+ 
+   FIXED
 
 0.04
 
- - No known bugs
+- No known bugs
 
 0.05
 
- - No known bugs
+- No known bugs
 
 0.06
+
+- t/Cover.t breaks, t/Cover.t contains no Test::Harness compatible tests, but 
+  since the coverage test is still experimental I will remove t/Cover.t
+
+  [cpan #3414] <URL: http://rt.cpan.org/NoAuth/Bug.html?id=3114 >
+   
+  FIXED
+
+0.07

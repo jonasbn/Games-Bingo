@@ -1,13 +1,13 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.17 2003/07/27 20:21:06 jonasbn Exp $
+# $Id: Bingo.pm,v 1.18 2003/08/01 16:35:08 jonasbn Exp $
 
 use strict;
 use integer;
 use POSIX qw(floor);
 use vars qw($VERSION);
 
-$VERSION = '0.06';
+$VERSION = '0.07';
 
 sub new {
 	my ($class, $ceiling) = @_;
