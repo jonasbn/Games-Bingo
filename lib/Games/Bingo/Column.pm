@@ -1,9 +1,14 @@
 package Games::Bingo::Column;
 
-# $Id: Column.pm,v 1.9 2003/05/13 15:28:51 jonasbn Exp $
+# $Id: Column.pm,v 1.10 2003/05/15 23:01:14 jonasbn Exp $
 
 use strict;
-use POSIX qw(floor);
+use integer;
+use lib qw(../lib lib);
+use Games::Bingo;
+use vars qw(@ISA);
+
+@ISA = qw(Games::Bingo);
 
 sub new {
 	my $class = shift;
@@ -19,8 +24,7 @@ sub new {
 sub _reverse { $b <=> $a }
 
 sub populate {
-	my $self = shift;
-	my $value = shift;
+	my ($self, $value) = @_;
 	
 	push @{$self->{_array}}, $value;
 	
@@ -28,17 +32,15 @@ sub populate {
 }
 
 sub set_status {
-	my $self = shift;
-	my $status = shift;
+	my ($self, $status) = @_;
 
 	$self->{_status} = $status;
 }
 
 sub get_random_number {
-	my $self = shift;
-	my $do_splice = shift;
+	my ($self, $do_splice) = @_;
 	
-	my $pos = POSIX::floor(rand($self->count_numbers));
+	my $pos = $self->random($self->count_numbers);
 		
 	my $number = $self->{_array}->[$pos];
 	splice(@{$self->{_array}}, $pos, 1) if $do_splice;

@@ -1,17 +1,25 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm,v 1.9 2003/05/13 15:28:51 jonasbn Exp $
+# $Id: ColumnCollection.pm,v 1.14 2003/05/16 08:57:46 jonasbn Exp $
 
 use strict;
 use integer;
-use POSIX qw(floor);
 use lib qw(lib ../lib);
+use Games::Bingo;
 use Games::Bingo::Column;
+use vars qw(@ISA);
+use Data::Dumper;
+
+@ISA = qw(Games::Bingo);
 
 sub new {
 	my $class = shift;
-	
+
 	my $self =  bless [], $class || ref $class;
+	
+	push @{$self}, @_ if (@_);
+
+	return $self;
 }
 
 sub divide {
@@ -35,9 +43,7 @@ sub divide {
 }
 
 sub add_column {
-	my $self = shift;
-	my $column = shift;
-	my $index = shift;
+	my ($self, $column, $index) = @_;
 	
 	if ($index) {
 		$self->[$index] = $column; 
@@ -47,18 +53,30 @@ sub add_column {
 }
 
 sub _remove_column {
-	my $self = shift;
-	my $index = shift;
+	my ($self, $index) = @_;
+
+	if ($index < 0 ) {
+		warn "column index cannot be a negative number\n";
+		return undef;
+	} elsif ($index > (scalar @{$self})) {
+		warn "no columns with that index\n";
+		return undef;
+	}
 
 	splice(@{$self}, $index, 1); 
 }
 
 sub get_column {
-	my $self = shift;
-	my $index = shift;
-	my $do_splice = shift;
-	my $auto_splice = shift;
+	my ($self, $index, $do_splice, $auto_splice) = @_;
 	
+	if ($index < 0 ) {
+		warn "column index cannot be a negative number\n";
+		return undef;
+	} elsif ($index > (scalar @{$self})) {
+		warn "no columns with that index\n";
+		return undef;
+	}
+		
 	my $column = $self->[$index];
 		
 	if ($auto_splice and $column) {
@@ -77,14 +95,21 @@ sub get_column {
 }
 
 sub get_random_column {
-	my $self = shift;
-	my $do_splice = shift;
-	my $auto_splice = shift;
+	my ($self, $do_splice, $auto_splice) = @_;
 	
-	my $index = POSIX::floor(rand(scalar @{$self}));	
-	my $column = $self->get_column($index, $do_splice, $auto_splice);
-
-	return $column;
+	my $index = $self->random(scalar @{$self});	
+	my $column;
+	
+	eval {
+		$column = $self->get_column($index, $do_splice, $auto_splice);
+	};
+	
+	if (@!) {
+		warn "unable to get random column: $@";
+		return undef;	
+	} else {
+		return $column;
+	}
 }
 
 1;
@@ -217,13 +242,9 @@ set, either B<1> or B<0>.
 
 =over 4
 
-=item *
+=item Games::Bingo
 
-Games::Bingo
-
-=item *
-
-Games::Bingo::Column
+=item Games::Bingo::Column
 
 =back
 

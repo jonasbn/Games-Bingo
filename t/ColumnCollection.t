@@ -1,10 +1,10 @@
 #!/usr/local/bin/perl -w
 
-# $Id: ColumnCollection.t,v 1.4 2003/05/08 19:18:30 jonasbn Exp $
+# $Id: ColumnCollection.t,v 1.8 2003/05/16 09:59:01 jonasbn Exp $
 
 use strict;
 use lib qw(lib ../lib);
-use Test::More tests => 12;
+use Test::More tests => 23;
 use Data::Dumper;
 use Games::Bingo::Column;
 
@@ -67,3 +67,45 @@ is(scalar @{$col}, 0, 'Testing the remove column');
 
 #test 12
 is(ref $c, 'Games::Bingo::Column', 'Checking the extracted element');
+
+#test 13
+my $col2 = Games::Bingo::ColumnCollection->new($c1, $c2, $c3);
+is(scalar @{$col2}, 3, 'Testing the remove column');
+
+#test 14
+is(@!, 0, 'Testing no warnings have been issued');
+my $cu = $col2->get_column(-1);
+
+#test 15
+is((ref $cu), "", 'Testing undef has been returned');
+
+#test 16
+like(@!, qr/\w+/, 'Testing that a warning is issued');
+
+#test 17
+$cu = $col2->get_column(10);
+
+#test 18
+is((ref $cu), "", 'Testing undef has been returned');
+
+#test 19
+like(@!, qr/\w+/, 'Testing that a warning is issued');
+
+#test 20
+is(@!, 0, 'Testing no warnings have been issued');
+my $cu2 = $col2->_remove_column(-1);
+
+#test 21
+is((ref $cu), "", 'Testing undef has been returned');
+
+#test 22
+like(@!, qr/\w+/, 'Testing that a warning is issued');
+
+#test 23
+$cu2 = $col2->_remove_column(10);
+
+#test 24
+is((ref $cu), "", 'Testing undef has been returned');
+
+#test 25
+like(@!, qr/\w+/, 'Testing that a warning is issued');

@@ -1,6 +1,6 @@
 package Games::Bingo::Print;
 
-# $Id: Print.pm,v 1.6 2003/05/13 15:28:51 jonasbn Exp $
+# $Id: Print.pm,v 1.7 2003/05/15 05:35:25 jonasbn Exp $
 
 use strict;
 use integer;
@@ -157,7 +157,7 @@ __END__
 
 =head1 NAME
 
-Games::Bingo - PDF Generation Class
+Games::Bingo::Print - PDF Generation Class
 
 =cut
 

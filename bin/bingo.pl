@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo.pl,v 1.4 2003/05/14 16:35:00 jonasbn Exp $
+# $Id: bingo.pl,v 1.5 2003/05/16 09:59:01 jonasbn Exp $
 
 use strict;
 use lib qw(../lib/ lib);
@@ -8,12 +8,9 @@ use Games::Bingo;
 
 my $version = "0.01";
 
-my $bingo = Games::Bingo->new();
+my $bingo = Games::Bingo->new(90);
 
-my @numbers;
 my @taken;
-
-$bingo->init(\@numbers, 90);
 init_taken(\@taken);
 
 main();
@@ -21,7 +18,7 @@ main();
 sub main {
 	my $number;
 	
-	while(scalar @numbers) {
+	while(scalar @{$bingo->{'_numbers'}}) {
 
 		system("clear");
 		print "########################################\n";
@@ -34,7 +31,7 @@ sub main {
 		print "\nHit <Return> for next number\n";
 		my $v = <STDIN>;
 
-		$number = $bingo->play(\@numbers);
+		$number = $bingo->play();
 		$bingo->take(\@taken, $number);
 	}
 }
