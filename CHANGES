@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.29 2004/01/06 21:01:01 jonasbn Exp $
+$Id: CHANGES,v 1.31 2004/01/21 19:48:26 jonasbn Exp $
 
 0.01 Released 10th. of May 2003 
 
@@ -181,3 +181,14 @@ $Id: CHANGES,v 1.29 2004/01/06 21:01:01 jonasbn Exp $
 
 - Fixed a bug in the pulled method in Games::Bingo
 
+0.10 Released 21st. of January 2004 (Update recommended)
+
+- Added description to NAME section in G::B::Constants
+
+- Constants put to wider use in Games::Bingo modules
+
+- Added POD for NUMBER_OF_COLUMNS_IN_CARD constant to
+  Games::Bingo::Constants
+
+- Removed requirement of Games::Bingo 0.05 in Games::Bingo::Card, hence
+  they are shipped together (for now)

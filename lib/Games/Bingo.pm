@@ -1,19 +1,20 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.23 2004/01/06 20:10:05 jonasbn Exp $
+# $Id: Bingo.pm,v 1.24 2004/01/21 19:48:26 jonasbn Exp $
 
 use strict;
 use integer;
 use POSIX qw(floor);
 use vars qw($VERSION @ISA);
 use Games::Bingo::Card;
+use Games::Bingo::Constants qw(NUMBER_OF_NUMBERS);
 
 @ISA = qw(Games::Bingo::Card);
-$VERSION = '0.09';
+$VERSION = '0.10';
 
 sub new {
 	my $class = shift;
-	my $ceiling = shift || 90;
+	my $ceiling = shift || NUMBER_OF_NUMBERS;
 	
 	my $self = bless {
 		_numbers => [],
@@ -344,7 +345,7 @@ Games::Bingo and related modules are free software and is released under
 the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+Games::Bingo is (C) 2003-2004 Jonas B. Nielsen (jonasbn)
 E<lt>jonasbn@cpan.orgE<gt>
 
 =cut

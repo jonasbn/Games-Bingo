@@ -1,6 +1,6 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm,v 1.17 2003/12/27 13:27:06 jonasbn Exp $
+# $Id: ColumnCollection.pm,v 1.18 2004/01/21 19:48:26 jonasbn Exp $
 
 use strict;
 use integer;
@@ -8,7 +8,6 @@ use lib qw(lib ../lib);
 use Games::Bingo;
 use Games::Bingo::Column;
 use vars qw(@ISA $VERSION);
-use Data::Dumper;
 use Carp;
 
 @ISA = qw(Games::Bingo);
@@ -275,7 +274,7 @@ Games::Bingo and related modules are free software and is released under
 the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+Games::Bingo is (C) 2003-2004 Jonas B. Nielsen (jonasbn)
 E<lt>jonasbn@cpan.orgE<gt>
 
 =cut

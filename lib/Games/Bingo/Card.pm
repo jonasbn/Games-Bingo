@@ -1,13 +1,13 @@
 package Games::Bingo::Card;
 
-# $Id: Card.pm,v 1.13 2003/12/27 13:27:06 jonasbn Exp $
+# $Id: Card.pm,v 1.14 2004/01/21 19:48:26 jonasbn Exp $
 
 use strict;
 use integer;
 use Data::Dumper;
 use vars qw($VERSION);
 use lib qw(lib ../lib);
-use Games::Bingo '0.05';
+use Games::Bingo;
 use Games::Bingo::Column;
 use Games::Bingo::ColumnCollection;
 use Games::Bingo::Constants qw(
@@ -15,6 +15,7 @@ use Games::Bingo::Constants qw(
 	NUMBER_OF_COLUMNS_IN_CARD
 	NUMBER_OF_ROWS_IN_CARD
 	NUMBER_OF_NUMBERS_IN_ROW
+	NUMBER_OF_NUMBERS
 );
 
 $VERSION = '0.02';
@@ -150,7 +151,7 @@ sub _resolve_column {
 		
 	if ($result < 1) { #ones go in column 0
 		$column = 0;
-	} elsif ($result == 9) { #9 go in column 8
+	} elsif ($result == NUMBER_OF_COLUMNS_IN_CARD) { #9 go in column 8
 		$column = 8; 	
 	}
 	return $column;
@@ -161,7 +162,7 @@ sub _init {
 		
 	my @numbers;
 	my $bingo = Games::Bingo->new();
-	$bingo->init(\@numbers, 90);
+	$bingo->init(\@numbers, NUMBER_OF_NUMBERS);
 
 	#Creating the numeric set to pick from
 	my $temp_collection = Games::Bingo::ColumnCollection->new();
@@ -400,7 +401,7 @@ Games::Bingo::Card and related modules are free software and is released under
 the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+Games::Bingo is (C) 2003-2004 Jonas B. Nielsen (jonasbn)
 E<lt>jonasbn@cpan.orgE<gt>
 
 =cut

@@ -1,6 +1,6 @@
 package Games::Bingo::Constants;
 
-# $Id: Constants.pm,v 1.2 2003/12/27 10:27:16 jonasbn Exp $
+# $Id: Constants.pm,v 1.4 2004/01/21 19:48:26 jonasbn Exp $
 
 use strict;
 require Exporter;
@@ -33,7 +33,7 @@ __END__
 
 =head1 NAME
 
-Games::Bingo::Constants
+Games::Bingo::Constants - constants used in the many Games::Bingo modules
 
 =head1 SYNOPSIS
 
@@ -64,6 +64,12 @@ Definition: 4
 This is a constant defining the number of numbers in a card
 
 Definition: NUMBER_OF_NUMBERS_IN_ROW * NUMBER_OF_ROWS_IN_CARD
+
+=head2 NUMBER_OF_NUMBERS_IN_CARD
+
+This is a constant defining the number of columns in a card
+
+Definition: 9
 
 =head1 SEE ALSO
 
@@ -100,7 +106,7 @@ Games::Bingo::Constants and related modules are free software and is
 released under the Artistic License. See
 E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
 
-Games::Bingo is (C) 2003 Jonas B. Nielsen (jonasbn)
+Games::Bingo is (C) 2003-2004 Jonas B. Nielsen (jonasbn)
 E<lt>jonasbn@cpan.orgE<gt>
 
 =cut
