@@ -1,6 +1,6 @@
 Known BUGS in Games::Bingo (and issues)
 
-$Id: BUGS,v 1.18 2003/12/27 10:27:16 jonasbn Exp $
+$Id: BUGS,v 1.20 2004/01/25 17:29:17 jonasbn Exp $
 
 Alpha
 
@@ -169,3 +169,17 @@ Alpha
   See also b/bless.t
   
   FIXED
+
+0.09
+
+- No known bugs
+
+0.10
+
+- Problem with newline in Games::Bingo::Constants. The bug appears in
+  Perl 5.005_03
+
+  [cpan #5018] <URL: http://rt.cpan.org/NoAuth/Bug.html?id=5018 >
+  
+  PATCHED
+  

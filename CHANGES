@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.31 2004/01/21 19:48:26 jonasbn Exp $
+$Id: CHANGES,v 1.32 2004/01/25 17:28:54 jonasbn Exp $
 
 0.01 Released 10th. of May 2003 
 
@@ -192,3 +192,7 @@ $Id: CHANGES,v 1.31 2004/01/21 19:48:26 jonasbn Exp $
 
 - Removed requirement of Games::Bingo 0.05 in Games::Bingo::Card, hence
   they are shipped together (for now)
+
+0.11 Released 25th. of January (Update only necessary for Perl 5.005_03)
+
+- Fixed [cpan #5018] Patch from LTHEGLER applied to Games::Bingo::Constants.

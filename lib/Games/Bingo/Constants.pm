@@ -1,6 +1,6 @@
 package Games::Bingo::Constants;
 
-# $Id: Constants.pm,v 1.4 2004/01/21 19:48:26 jonasbn Exp $
+# $Id: Constants.pm,v 1.5 2004/01/25 17:13:09 jonasbn Exp $
 
 use strict;
 require Exporter;
@@ -23,8 +23,8 @@ use constant NUMBER_OF_NUMBERS_IN_ROW  => 4;
 
 use constant NUMBER_OF_ROWS_IN_CARD    => 3;
 use constant NUMBER_OF_COLUMNS_IN_CARD => 9;
-use constant NUMBER_OF_NUMBERS_IN_CARD 
-	=> (NUMBER_OF_NUMBERS_IN_ROW * NUMBER_OF_ROWS_IN_CARD);
+use constant NUMBER_OF_NUMBERS_IN_CARD =>
+	(NUMBER_OF_NUMBERS_IN_ROW * NUMBER_OF_ROWS_IN_CARD);
 
 
 1;

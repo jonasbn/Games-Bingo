@@ -1,6 +1,6 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.24 2004/01/21 19:48:26 jonasbn Exp $
+# $Id: Bingo.pm,v 1.25 2004/01/25 17:37:19 jonasbn Exp $
 
 use strict;
 use integer;
@@ -10,7 +10,7 @@ use Games::Bingo::Card;
 use Games::Bingo::Constants qw(NUMBER_OF_NUMBERS);
 
 @ISA = qw(Games::Bingo::Card);
-$VERSION = '0.10';
+$VERSION = '0.11';
 
 sub new {
 	my $class = shift;
