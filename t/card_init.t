@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl -w
 
-# $Id: card_init.t,v 1.2 2004/01/06 20:54:01 jonasbn Exp $
+# $Id: card_init.t,v 1.3 2004/01/31 18:16:21 jonasbn Exp $
 
 use strict;
 use lib qw(lib ../lib);
@@ -9,7 +9,7 @@ use Games::Bingo::Constants qw(
 	NUMBER_OF_NUMBERS_IN_CARD
 	NUMBER_OF_COLUMNS_IN_CARD
 );
-use Test::More tests => 15;
+use Test::More tests => 18;
 
 my $verbose = 0;
 

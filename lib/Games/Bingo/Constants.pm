@@ -1,6 +1,6 @@
 package Games::Bingo::Constants;
 
-# $Id: Constants.pm,v 1.5 2004/01/25 17:13:09 jonasbn Exp $
+# $Id: Constants.pm,v 1.6 2004/01/31 18:16:21 jonasbn Exp $
 
 use strict;
 require Exporter;
@@ -19,7 +19,7 @@ $VERSION = '0.01';
 
 use constant NUMBER_OF_NUMBERS => 90;
 
-use constant NUMBER_OF_NUMBERS_IN_ROW  => 4;
+use constant NUMBER_OF_NUMBERS_IN_ROW  => 5;
 
 use constant NUMBER_OF_ROWS_IN_CARD    => 3;
 use constant NUMBER_OF_COLUMNS_IN_CARD => 9;
@@ -57,7 +57,7 @@ Definition: 3
 
 This is a constant defining the number of numbers is a row.
 
-Definition: 4
+Definition: 5
 
 =head2 NUMBER_OF_NUMBERS_IN_CARD
 

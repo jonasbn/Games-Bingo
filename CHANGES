@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.32 2004/01/25 17:28:54 jonasbn Exp $
+$Id: CHANGES,v 1.33 2004/01/31 18:16:20 jonasbn Exp $
 
 0.01 Released 10th. of May 2003 
 
@@ -196,3 +196,10 @@ $Id: CHANGES,v 1.32 2004/01/25 17:28:54 jonasbn Exp $
 0.11 Released 25th. of January (Update only necessary for Perl 5.005_03)
 
 - Fixed [cpan #5018] Patch from LTHEGLER applied to Games::Bingo::Constants.
+
+0.12 Released 31st. of January (Update not necessary)
+
+- According to my fellow Copenhagen Perl Monger Kim Hansen, the actual
+  number of numbers in a bingo card is 15 not 12, so I have update
+  G::B::Constants and fixed to test to use G::B::Constants.
+  

@@ -1,6 +1,6 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm,v 1.25 2004/01/25 17:37:19 jonasbn Exp $
+# $Id: Bingo.pm,v 1.26 2004/01/31 18:16:21 jonasbn Exp $
 
 use strict;
 use integer;
@@ -10,7 +10,7 @@ use Games::Bingo::Card;
 use Games::Bingo::Constants qw(NUMBER_OF_NUMBERS);
 
 @ISA = qw(Games::Bingo::Card);
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 sub new {
 	my $class = shift;
@@ -329,6 +329,8 @@ started all this
 =item Lars Thegler (THEGLER) for several bug reports
 
 =item Casper Warming (WARMING), for helping with the OSX client
+
+=item
 
 =item The remaining Copenhagen Perl Mongers for testing the IRC game
 
