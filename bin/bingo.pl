@@ -1,12 +1,11 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo.pl,v 1.6 2003/07/30 17:53:11 jonasbn Exp $
+# $Id: bingo.pl,v 1.7 2003/08/18 05:56:56 jonasbn Exp $
 
 use strict;
-use lib qw(../lib/ lib);
 use Games::Bingo;
 
-my $version = "0.01";
+my $version = "0.02";
 
 my $bingo = Games::Bingo->new(90);
 
@@ -18,7 +17,7 @@ main();
 sub main {
 	my $number;
 	
-	while(scalar @{$bingo->{'_numbers'}}) {
+	while (1) {
 
 		system("clear");
 		print "########################################\n";
@@ -27,8 +26,11 @@ sub main {
 
 		show_taken(\@taken);
 		
-		print "\nNumber = $number\n" if $number;
-		print "\nHit <Return> for next number\n";
+		print "\nNumber = $number\n\n" if $number;
+
+		last unless scalar @{$bingo->{'_numbers'}};
+
+		print "Hit <Return> for next number\n";
 		my $v = <STDIN>;
 
 		$number = $bingo->play();
@@ -82,7 +84,7 @@ bingo.pl
 =head1 DESCRIPTION
 
 This is a console bingo game application. With bingo_print.pl from
-Games::Bingo::Print you can generate cards and they you are actually
+Games::Bingo::Print you can generate cards and then you are actually
 ready to play.
 
 =cut

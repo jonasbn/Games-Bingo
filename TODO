@@ -1,6 +1,6 @@
 TODO for Games::Bingo
 
-$Id: TODO,v 1.21 2003/07/30 18:19:47 jonasbn Exp $
+$Id: TODO,v 1.22 2003/08/18 08:34:43 jonasbn Exp $
 
 - Write a Tk front-end?
 
@@ -10,3 +10,6 @@ $Id: TODO,v 1.21 2003/07/30 18:19:47 jonasbn Exp $
   run under 5.6.0 (Perl >5.6.0)
 
 - Write a Windows .NET front-end?
+
+- Check requirements, module version numbers not specified. I suspect the 
+  problems with t/Cover.t was due to differences in Test::More versions?

@@ -1,6 +1,6 @@
 README for Games::Bingo
 
-$Id: README,v 1.7 2003/07/30 17:53:09 jonasbn Exp $
+$Id: README,v 1.9 2003/08/18 07:04:01 jonasbn Exp $
 
 INSTALLATION
 
@@ -18,13 +18,12 @@ REQUIREMENTS
 
 SETUP
 
-use the programme bingo_print.pl located in the bin direcitory to
-generate the number of pages you require (one for each player). Each
+Use the programme bin/bingo_print.pl from the Games::Bingo::Print module
+to generate the number of pages you require (one for each player). Each
 page holds 3 cards. 
 
-Setup the computer and start playing using either the program bingo.pl
-located in the bin directory or one of the other bingo programmes
-listed below.
+Setup the computer and start playing using either the program bin/bingo.pl
+or one of the other bingo programs listed below.
 
 PLAYING // The rules of bingo
 
@@ -39,7 +38,7 @@ bingo cards and mark them off.
 The bingo cards have 3 rows and 8 columns with a random selection of 12
 numbers. 
 
-The first column contains numbers between #1 and #9. second between #10
+The first column contains numbers between #1 and #9. the second between #10
 and #19, the last column contains numbers between #80 and #90, (the latter
 holding the alias 'gamle ole' in .dk - it is allowed to shout 'GAMLE OLE' 
 when this number is pulled);
@@ -64,19 +63,18 @@ The game stops when a whole card is filled and somebody have yelled 'Bingo!'.
 ABOUT
 
 This collection of modules and programs comes from when I got the idea
-that I had never programed a bingo game for my computer. I got inpired
-by playing and actual physical bingo game and I though to myself -
+that I had never programmed a bingo game for my computer. I got inspired
+by playing an actual physical bingo game and I thought to myself -
 that's easy to implement and yes it was.
 
-in the bin directory is located a simple console based bingo game
-application called bingo.pl
+In the bin directory is located a simple console based bingo game
+application called bingo.pl.
 
 But since the project has grown, and the next natural step was to make
-the progam able to print its own bingo cards, Matt Saergant suggested
-using PDFLib and for providing me with an working example.
+the progam able to print its own bingo cards. Matt Sergeant suggested
+using PDFLib and provided me with a working example.
 
-in the bin directory is also located a card printing console
-application called bingo_print.pl
+The printing of bingo cards has been moved in the Games::Bingo::Print module.
 
 Well not even having the PDF part in place I got the crazy idea of
 implementing an Aqua GUI for the program, which would give the code a
@@ -91,9 +89,20 @@ version of the console game and it is still under development.
 
 Anyway - have fun
 
-BTW If you experience any bugs please report them using:
+BUGS
+
+If you experience any bugs please report them using:
 
 http://rt.cpan.org or bug-Games-Bingo@rt.cpan.org
+
+ACKNOWLEDGEMENTS
+
+I would like to thank the following people:
+
+Matt Sergeant (MSERGEANT), for suggesting PDFLib
+Allan Juul, for helping with the print implementation
+Lars Thegler (LTHEGLER), for RT tickets and patches
+Casper Warming (WARMING), for helping with the OSX client
 
 Thanks,
 

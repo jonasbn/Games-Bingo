@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES,v 1.19 2003/08/02 09:41:47 jonasbn Exp $
+$Id: CHANGES,v 1.21 2003/08/20 05:32:16 jonasbn Exp $
 
 0.01 Released 10th. of May 2003 
 
@@ -110,8 +110,18 @@ $Id: CHANGES,v 1.19 2003/08/02 09:41:47 jonasbn Exp $
 - Additional tests of the new methods in Games::Bingo (SEE
   CHANGES, release 0.05 and t/basic2.t)
 
-0.07 Not released yet
+0.07 Released 2nd. of August 2003 (Update necessary)
 
 - Removed t/Cover.t from distribution since it is experimental this
   should fix the breaking test (SEE:
   http://rt.cpan.org/NoAuth/Bug.html?id=3114 and the BUGS file)
+
+0.08 Released 20th. of August 2003 (No update necessary)
+
+- Applied patch from Lars Thegler to bin/bingo.pl (SEE:
+  http://rt.cpan.org/NoAuth/Bug.html?id=3271 and the BUGS file)
+ 
+- Applied patch from Lars to Games::Bingo docs and stuff (SEE:
+  http://rt.cpan.org/NoAuth/Bug.html?id=3273 and the BUGS file)
+
+- Added Acknowledgement section to the README

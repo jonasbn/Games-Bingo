@@ -1,6 +1,6 @@
 Known BUGS in Games::Bingo (and issues)
 
-$Id: BUGS,v 1.13 2003/08/02 09:41:47 jonasbn Exp $
+$Id: BUGS,v 1.15 2003/08/18 08:34:43 jonasbn Exp $
 
 Alpha
 
@@ -93,3 +93,16 @@ Alpha
   FIXED
 
 0.07
+
+- Error reported in bingo.pl, apparently the game stops a number too early, 
+  meaning only 89 numbers are drawn instead of 90.
+
+  [cpan #3271] <URL: http://rt.cpan.org/NoAuth/Bug.html?id=3271 >
+  
+  PATCHED
+
+- Errors in the README file 
+
+  [cpan #3273] <URL: http://rt.cpan.org/NoAuth/Bug.html?id=3273 >
+
+  PATCHED
