@@ -1,11 +1,11 @@
 #!/usr/local/bin/perl -w
 
-# $Id: collection_get_column.t 1090 2004-01-04 20:05:48Z jonasbn $
+# $Id: collection_get_column.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use lib qw(lib ../lib);
-use Games::Bingo::Card;
-use Test::More tests => 11;
+use Test::More tests => 12;
+
+BEGIN { use_ok( 'Games::Bingo::Card' ); }
 
 my $card = Games::Bingo::Card->new();
 my $fcc = $card->_init();

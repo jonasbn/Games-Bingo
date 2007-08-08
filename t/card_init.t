@@ -1,15 +1,15 @@
 #!/usr/local/bin/perl -w
 
-# $Id: card_init.t 1185 2004-01-31 18:16:20Z jonasbn $
+# $Id: card_init.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use lib qw(lib ../lib);
-use Games::Bingo::Card;
+use Test::More tests => 19;
+
+BEGIN { use_ok( 'Games::Bingo::Card' ); }
 use Games::Bingo::Constants qw(
 	NUMBER_OF_NUMBERS_IN_CARD
 	NUMBER_OF_COLUMNS_IN_CARD
 );
-use Test::More tests => 18;
 
 my $verbose = 0;
 

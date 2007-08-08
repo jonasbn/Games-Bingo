@@ -1,12 +1,7 @@
-b/bless.t
-b/short.t
-b/sort.t
 bin/bingo.pl
 BUGS
 Build.PL
 CHANGES
-draft/Cover.t
-draft/cover_test.pl
 INSTALL
 lib/Games/Bingo.pm
 lib/Games/Bingo/Card.pm
@@ -26,6 +21,7 @@ t/bingo_play.t
 t/bingo_pull.t
 t/bingo_pulled.t
 t/bingo_random.t
+t/bingo_splitnumber.t
 t/bingo_take.t
 t/card_flush.t
 t/card_get_all_numbers.t
@@ -36,7 +32,6 @@ t/card_new.t
 t/card_populate.t
 t/card_print_card.t
 t/card_resolve_column.t
-t/card_splitnumber.t
 t/card_validate.t
 t/collection_add_column.t
 t/collection_count_columns.t

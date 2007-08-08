@@ -1,21 +1,25 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo_all_pulled.t 1092 2004-01-06 20:13:32Z jonasbn $
+# $Id: bingo_all_pulled.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use Test::More tests => 2;
-use lib qw(lib ../lib);
-use Games::Bingo;
+use Test::More tests => 4;
+
+#test 1
+BEGIN { use_ok( 'Games::Bingo' ); }
 
 my $bingo = Games::Bingo->new();
 
-#test 1
 my @pulled = $bingo->_all_pulled();
-is(scalar @pulled, 0, 'Testing _all_pulled'); 
+
+#test 1
+is(scalar @pulled, 0, 'asserting _all_pulled to 0'); 
 
 #test 2
 my $number = $bingo->play();
 $bingo->pull($number);
 
-@pulled = $bingo->_all_pulled();
-is(scalar @pulled, 1, 'Testing _all_pulled');
+ok(@pulled = $bingo->_all_pulled(), 'calling _all_pulled');
+
+#test 3
+is(scalar @pulled, 1, 'asserting _all_pulled to 1');

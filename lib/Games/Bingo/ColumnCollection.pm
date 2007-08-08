@@ -1,10 +1,9 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm 1358 2004-05-29 13:57:14Z jonasbn $
+# $Id: ColumnCollection.pm 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
 use integer;
-use lib qw(lib ../lib);
 use Games::Bingo;
 use Games::Bingo::Column;
 use vars qw(@ISA $VERSION);

@@ -1,11 +1,11 @@
 #!/usr/bin/perl -w
 
-# $Id: collection_get_random_column.t 1090 2004-01-04 20:05:48Z jonasbn $
+# $Id: collection_get_random_column.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use Test::More tests => 3;
-use lib qw(lib ../lib);
-use Games::Bingo::ColumnCollection;
+use Test::More tests => 4;
+
+BEGIN { use_ok( 'Games::Bingo::ColumnCollection' ); }
 
 my $c1 = Games::Bingo::Column->new(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 my $c2 = Games::Bingo::Column->new(1, 11, 12, 13, 14, 15, 16, 17, 18, 19);

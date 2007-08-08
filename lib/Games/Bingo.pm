@@ -1,16 +1,14 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm 1358 2004-05-29 13:57:14Z jonasbn $
+# $Id: Bingo.pm 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
 use integer;
 use POSIX qw(floor);
-use vars qw($VERSION @ISA);
-use Games::Bingo::Card;
+use vars qw($VERSION);
 use Games::Bingo::Constants qw(NUMBER_OF_NUMBERS);
 
-@ISA = qw(Games::Bingo::Card);
-$VERSION = '0.13';
+$VERSION = '0.14';
 
 sub new {
 	my $class = shift;
@@ -108,6 +106,15 @@ sub random {
 	my ($self, $number) = @_;
 
 	return POSIX::floor(rand($number));
+}
+
+sub splitnumber {
+	my ($self, $number) = @_;
+	
+	my $modified = sprintf("%02d", $number);
+    my ($x, $y) = $modified =~ m/^(\d{1})(\d{1})$/o;
+
+	return ($x, $y, $modified);
 }
 
 1;
@@ -259,6 +266,11 @@ A method which returns all pulled numbers as an array.
 
 A clumsy alias/"overload" implementation of the take method.
 
+=head2 splitnumber
+
+Takes a number (prepends 0 its a single digit number) and returns it
+split in two (We use this for identifying the column it belongs to).
+
 =head1 SEE ALSO
 
 =over
@@ -269,7 +281,7 @@ A clumsy alias/"overload" implementation of the take method.
 
 =item L<Games::Bingo::Print>
 
-=item L<Games::Bingo::Print::Card>
+=item L<Games::Bingo::Card>
 
 =item L<Games::Bingo::Bot>
 
@@ -292,13 +304,26 @@ or by sending mail to
 
   bug-Games-Bingo@rt.cpan.org
 
+=head1 TEST COVERAGE
+
+	---------------------------- ------ ------ ------ ------ ------ ------ ------
+	File                           stmt   bran   cond    sub    pod   time  total
+	---------------------------- ------ ------ ------ ------ ------ ------ ------
+	blib/lib/Games/Bingo.pm        93.1   80.0   60.0  100.0  100.0   24.2   91.7
+	blib/lib/Games/Bingo/Card.pm   97.7   88.2   33.3  100.0  100.0   21.1   95.2
+	...lib/Games/Bingo/Column.pm   89.4   60.0   33.3  100.0  100.0   25.8   85.7
+	...Bingo/ColumnCollection.pm   78.8   61.5   33.3  100.0  100.0   28.2   76.3
+	.../Games/Bingo/Constants.pm  100.0    n/a    n/a  100.0    n/a    0.7  100.0
+	Total                          91.4   75.0   41.2  100.0  100.0  100.0   88.7
+	---------------------------- ------ ------ ------ ------ ------ ------ ------
+
 =head1 AUTHOR
 
 jonasbn E<lt>jonasbn@cpan.orgE<gt>
 
 =head1 ACKNOWLEDGEMENTS
 
-This is a compilation of all the people have helped me, their names are
+This is a compilation of all the people have helped me, their names are also
 scattered all over the modules where appropriate.
 
 =over
@@ -318,6 +343,8 @@ started all this
 
 =item * The remaining Copenhagen Perl Mongers for testing the IRC game
 
+=item * Mike Castle for his POD patch
+
 =item * All the ppl who have commented on my journal coming with
 suggestions etc.
 
@@ -329,7 +356,7 @@ Games::Bingo and related modules are free software and is released under
 the Artistic License. See
 L<http://www.perl.com/language/misc/Artistic.html> for details.
 
-Games::Bingo is (C) 2003-2004 Jonas B. Nielsen (jonasbn)
+Games::Bingo is (C) 2003-2007 Jonas B. Nielsen (jonasbn)
 E<lt>jonasbn@cpan.orgE<gt>
 
 =cut

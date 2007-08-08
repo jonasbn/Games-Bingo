@@ -1,18 +1,18 @@
 #!/usr/bin/perl -w
 
-# $Id: card_resolve_column.t 1090 2004-01-04 20:05:48Z jonasbn $
+# $Id: card_resolve_column.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use Test::More tests => 90;
-use lib qw(lib ../lib);
-use Games::Bingo::Card;
+use Test::More tests => 91;
+
+BEGIN { use_ok( 'Games::Bingo::Card' ); }
 
 #Testing the resolution of numbers resolv column
 my $bingo = Games::Bingo->new();
 my @game_numbers;
 $bingo->init(\@game_numbers, 90);
 
-my $card = Games::Bingo->new();
+my $card = Games::Bingo::Card->new();
 
 my $match = 0;
 for(my $i = 0; $i < (scalar @game_numbers); $i++) {

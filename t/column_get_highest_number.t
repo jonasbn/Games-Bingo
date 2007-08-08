@@ -1,11 +1,12 @@
 #!/usr/bin/perl -w
 
-# $Id: column_get_highest_number.t 1090 2004-01-04 20:05:48Z jonasbn $
+# $Id: column_get_highest_number.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use lib qw(lib ../lib);
-use Games::Bingo::Column;
-use Test::More tests => 9;
+use Test::More tests => 10;
+
+#test 1
+BEGIN { use_ok( 'Games::Bingo::Column' ); }
 
 my @numbers = qw(1 2 3 4 5 6 7 8 9);
 my $c = Games::Bingo::Column->new(1, @numbers);

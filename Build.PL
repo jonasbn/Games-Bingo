@@ -1,16 +1,29 @@
 # $Id$
 
+use strict;
 use Module::Build;
 
-Module::Build->new( 
-	module_name => 'Games::Bingo',
-	license => 'perl',
+my $build = Module::Build->new(
+	dist_author       => 'Jonas B. Nielsen, <jonasbn@cpan.org>',
+	dist_name         => 'Games-Bingo',
 	dist_version_from => 'lib/Games/Bingo.pm',
-	requires => { 
-		'POSIX'         => 0,
-		'Test::Harness' => 0,
-		'Test::More'    => 0,
-		'Test::Pod'     => '0.95',
-		'Data::Dumper'  => 0,
+	license           => 'perl',
+	scripts => {
+			'script/bingo.pl' => 'script/bingo.pl',
 	},
-)->create_build_script;
+	recursive_test_files => 1,
+	requires => {
+			'POSIX'         => 0,
+			'Test::Pod'     => '0.95',
+			'Test::Harness' => 0, #core
+			'Test::More'    => 0, #core
+			'Data::Dumper'  => 0, #core
+			'UNIVERSAL'     => 0, #core
+			'Carp'          => 0, #core
+	},
+	no_index => {
+		directory => ['t'],
+	},
+	create_makefile_pl => 'traditional',
+);
+$build->create_build_script();

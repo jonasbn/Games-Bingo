@@ -1,11 +1,12 @@
 #!/usr/bin/perl -w
 
-# $Id: collection_remove_column.t 1096 2004-01-06 20:54:01Z jonasbn $
+# $Id: collection_remove_column.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use Test::More tests => 2;
-use lib qw(lib ../lib);
-use Games::Bingo::ColumnCollection;
+use Test::More tests => 3;
+
+#test 1
+BEGIN { use_ok( 'Games::Bingo::ColumnCollection' ); }
 
 my $c1 = Games::Bingo::Column->new(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 my $c2 = Games::Bingo::Column->new(1, 11, 12, 13, 14, 15, 16, 17, 18, 19);

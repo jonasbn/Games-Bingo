@@ -1,13 +1,13 @@
 #!/usr/bin/perl -w
 
-# $Id: card_splitnumber.t 1096 2004-01-06 20:54:01Z jonasbn $
+# $Id: card_splitnumber.t 1640 2006-12-17 10:40:02Z jonasbn $
 
 use strict;
-use Test::More tests => 8;
-use lib qw(lib ../lib);
-use Games::Bingo::Card;
+use Test::More tests => 9;
 
-my $card = Games::Bingo::Card->new();
+BEGIN { use_ok( 'Games::Bingo' ); }
+
+my $card = Games::Bingo->new();
 
 my ($x, $y, $modified);
 ok(($x, $y, $modified) = $card->splitnumber(12));

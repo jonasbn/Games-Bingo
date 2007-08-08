@@ -1,13 +1,10 @@
 package Games::Bingo::Card;
 
-# $Id: Card.pm 1358 2004-05-29 13:57:14Z jonasbn $
+# $Id: Card.pm 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
 use integer;
-use Data::Dumper;
 use vars qw($VERSION);
-use lib qw(lib ../lib);
-use Games::Bingo;
 use Games::Bingo::Column;
 use Games::Bingo::ColumnCollection;
 use Games::Bingo::Constants qw(
@@ -38,15 +35,6 @@ sub get_all_numbers {
 		}
 	}
 	return @numbers;
-}
-
-sub splitnumber {
-	my ($self, $number) = @_;
-	
-	my $modified = sprintf("%02d", $number);
-    my ($x, $y) = $modified =~ m/^(\d{1})(\d{1})$/o;
-
-	return ($x, $y, $modified);
 }
 
 sub validate {
@@ -265,9 +253,9 @@ Games::Bingo::Card - a helper class for Games::Bingo
 	my $bingo = Games::Bingo-E<gt>new(90);
 	$card-E<gt>validate($bingo);
 
-	use Games::Bingo::Print::Card;
+	use Games::Bingo::Card;
 
-	my $p = Games::Bingo::Print::Card-E<gt>new();
+	my $p = Games::Bingo::Card-E<gt>new();
 	$p-E<gt>populate();
 
 =head1 DESCRIPTION
@@ -343,11 +331,6 @@ This method can be used to flush the contents of the B<Card> object.
 =head2 get_all_numbers
 
 Returns all the numbers contained in the B<_array> attribute as an array.
-
-=head2 splitnumber
-
-Takes a number (prepends 0 its a single digit number) and returns it
-split in two (We use this for identifying the column it belongs to).
 
 =head1 BUGS
 

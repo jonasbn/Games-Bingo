@@ -3,9 +3,9 @@
 # $Id: collection_new.t 1090 2004-01-04 20:05:48Z jonasbn $
 
 use strict;
-use Test::More tests => 1;
-use lib qw(lib ../lib);
-use Games::Bingo::ColumnCollection;
+use Test::More tests => 2;
+
+BEGIN { use_ok( 'Games::Bingo::ColumnCollection' ); }
 
 #test 1
 my $c1 = Games::Bingo::Column->new(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);

@@ -1,11 +1,11 @@
 #!/usr/local/bin/perl -w
 
-# $Id: card_populate.t 1136 2004-01-21 19:48:26Z jonasbn $
+# $Id: card_populate.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use lib qw(lib ../lib);
-use Games::Bingo::Card;
-use Test::More tests => 2;
+use Test::More tests => 3;
+
+BEGIN { use_ok( 'Games::Bingo::Card' ); }
 
 #test 1
 my $card = Games::Bingo::Card->new();

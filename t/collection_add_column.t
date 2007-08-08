@@ -1,11 +1,11 @@
 #!/usr/bin/perl -w
 
-# $Id: collection_add_column.t 1090 2004-01-04 20:05:48Z jonasbn $
+# $Id: collection_add_column.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use Test::More tests => 3;
-use lib qw(lib ../lib);
-use Games::Bingo::ColumnCollection;
+use Test::More tests => 4;
+
+BEGIN { use_ok( 'Games::Bingo::ColumnCollection' ); }
 
 my $col = Games::Bingo::ColumnCollection->new();
 

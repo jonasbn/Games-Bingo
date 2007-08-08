@@ -1,11 +1,12 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo_random.t 1097 2004-01-06 21:01:01Z jonasbn $
+# $Id: bingo_random.t 1864 2007-08-08 09:12:37Z jonasbn $
 
 use strict;
-use Test::More tests => 1;
-use lib qw(lib ../lib);
-use Games::Bingo;
+use Test::More tests => 2;
+
+#test 1
+BEGIN { use_ok( 'Games::Bingo' ); }
 
 my $bingo = Games::Bingo->new();
 
