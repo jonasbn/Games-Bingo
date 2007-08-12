@@ -1,11 +1,11 @@
 #!/usr/bin/perl -w
 
-# $Id: card_insert.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: card_insert.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use Test::More tests => 14;
 
-BEGIN { use_ok( 'Games::Bingo::Card' ); }
+use_ok( 'Games::Bingo::Card' );
 
 my $card = Games::Bingo::Card->new();
 

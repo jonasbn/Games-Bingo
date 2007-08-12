@@ -5,7 +5,7 @@
 use strict;
 use Test::More tests => 9;
 
-BEGIN { use_ok( 'Games::Bingo' ); }
+use_ok( 'Games::Bingo' );
 
 my $card = Games::Bingo->new();
 

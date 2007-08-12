@@ -6,7 +6,7 @@ use strict;
 use Test::More tests => 2;
 
 #test 1
-BEGIN { use_ok( 'Games::Bingo::Column' ); }
+use_ok( 'Games::Bingo::Column' );
 
 my @ary = qw(1 2 3 4 5 6 7 8 9);
 my $c = Games::Bingo::Column->new(1, @ary);

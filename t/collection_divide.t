@@ -1,12 +1,12 @@
 #!/usr/local/bin/perl -w
 
-# $Id: collection_divide.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: collection_divide.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use Test::More tests => 4;
 
-BEGIN { use_ok( 'Games::Bingo' ); }
-BEGIN { use_ok( 'Games::Bingo::ColumnCollection' ); }
+use_ok( 'Games::Bingo' );
+use_ok( 'Games::Bingo::ColumnCollection' );
 
 my $bingo = Games::Bingo->new();
 

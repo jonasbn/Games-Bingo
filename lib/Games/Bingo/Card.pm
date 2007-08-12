@@ -1,6 +1,6 @@
 package Games::Bingo::Card;
 
-# $Id: Card.pm 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: Card.pm 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use integer;
@@ -15,12 +15,12 @@ use Games::Bingo::Constants qw(
 	NUMBER_OF_NUMBERS
 );
 
-$VERSION = '0.02';
+$VERSION = '0.04';
 
 sub new {
 	my ($class) = @_;
 	
-	my $self = bless [], ref $class || $class; 
+	my $self = bless [], $class;
 	
 	return $self;
 }
@@ -41,14 +41,9 @@ sub validate {
 	my ($self, $bingo) = @_;
 	
 	my $rv = 0;
-	my $trv = undef;
-	if ($bingo->{game} > 2) {
-		#not implemented yet
-		$trv = 4;
-	} elsif ($bingo->{game} > 1) {
-		#not implemented yet
-		$trv = 8;
-	} elsif ($bingo->{game} > 0) {
+	my $trv = NUMBER_OF_NUMBERS_IN_CARD;
+	
+	if ($bingo->{game}) {
 		my @numbers = $self->get_all_numbers();
 		
 		foreach my $number (@numbers) {
@@ -117,10 +112,8 @@ sub _integrity_check {
 	my $rv = NUMBER_OF_NUMBERS_IN_CARD;
 	foreach my $row (@{$self})	{
 		foreach my $cell (@{$row}) {
-			if ($cell) {
-				if ($cell =~ m/^\d+$/o) {
-					$rv--;
-				}
+			if ($cell and $cell =~ m/^\d+$/o) {
+				$rv--;
 			}
 		} 
 	}

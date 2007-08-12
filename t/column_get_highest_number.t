@@ -1,17 +1,32 @@
 #!/usr/bin/perl -w
 
-# $Id: column_get_highest_number.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: column_get_highest_number.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
-use Test::More tests => 10;
+use Test::More tests => 12;
 
 #test 1
-BEGIN { use_ok( 'Games::Bingo::Column' ); }
+use_ok( 'Games::Bingo::Column' );
 
-my @numbers = qw(1 2 3 4 5 6 7 8 9);
-my $c = Games::Bingo::Column->new(1, @numbers);
+my @numbers;
+my $column;
 
-for(my $i = scalar(@numbers)-1; $i >= 0; $i--) {
-	my $j = $i + 1;
-	is($c->get_highest_number(1), $numbers[$i], "expecting $j");
+{
+	@numbers = qw(1 2 3 4 5 6 7 8 9);
+	$column = Games::Bingo::Column->new(1, @numbers);
+	
+	for(my $i = scalar(@numbers)-1; $i >= 0; $i--) {
+		my $j = $i + 1;
+		is($column->get_highest_number(1), $numbers[$i], "expecting $j");
+	}
+}
+
+{
+	@numbers = qw(1 2);
+	$column = Games::Bingo::Column->new(1, @numbers);
+	
+	for(my $i = scalar(@numbers)-1; $i >= 0; $i--) {
+		my $j = $i + 1;
+		is($column->get_highest_number(0), 2, "expecting 2");
+	}
 }

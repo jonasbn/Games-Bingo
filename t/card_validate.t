@@ -1,13 +1,15 @@
 #!/usr/bin/perl -w
 
-# $Id: card_validate.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: card_validate.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
-use Test::More tests => 3;
+use Test::More tests => 4;
 
-BEGIN { use_ok( 'Games::Bingo::Card' ); }
+use_ok( 'Games::Bingo::Card' );
 
-my $card = Games::Bingo::Card->new();
+my $card;
+
+$card = Games::Bingo::Card->new();
 $card->populate();
 
 #test 1
@@ -19,3 +21,8 @@ for(1 .. 90) {
 	$bingo->play();
 }
 is($card->validate($bingo), 1, 'Testing validate');
+
+$card = Games::Bingo::Card->new();
+$card->populate();
+
+is($card->validate($bingo), 0, 'Testing validate');

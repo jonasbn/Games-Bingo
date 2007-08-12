@@ -1,6 +1,6 @@
 package Games::Bingo;
 
-# $Id: Bingo.pm 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: Bingo.pm 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use integer;
@@ -8,7 +8,7 @@ use POSIX qw(floor);
 use vars qw($VERSION);
 use Games::Bingo::Constants qw(NUMBER_OF_NUMBERS);
 
-$VERSION = '0.14';
+$VERSION = '0.15';
 
 sub new {
 	my $class = shift;
@@ -18,13 +18,11 @@ sub new {
 		_numbers => [],
 		_pulled  => [[],[],[],[],[],[],[],[],[],],
 		game     => 1,
-	}, $class || ref $class;
+	}, $class;
 
-	if ($ceiling) {
-		my @ary;
-		$self->init(\@ary, $ceiling);
-		push @{$self->{'_numbers'}}, @ary; 
-	}
+	my @ary;
+	$self->init(\@ary, $ceiling);
+	push @{$self->{'_numbers'}}, @ary; 
 	
 	return $self;
 }
@@ -309,12 +307,12 @@ or by sending mail to
 	---------------------------- ------ ------ ------ ------ ------ ------ ------
 	File                           stmt   bran   cond    sub    pod   time  total
 	---------------------------- ------ ------ ------ ------ ------ ------ ------
-	blib/lib/Games/Bingo.pm        93.1   80.0   60.0  100.0  100.0   24.2   91.7
-	blib/lib/Games/Bingo/Card.pm   97.7   88.2   33.3  100.0  100.0   21.1   95.2
-	...lib/Games/Bingo/Column.pm   89.4   60.0   33.3  100.0  100.0   25.8   85.7
-	...Bingo/ColumnCollection.pm   78.8   61.5   33.3  100.0  100.0   28.2   76.3
-	.../Games/Bingo/Constants.pm  100.0    n/a    n/a  100.0    n/a    0.7  100.0
-	Total                          91.4   75.0   41.2  100.0  100.0  100.0   88.7
+	blib/lib/Games/Bingo.pm       100.0  100.0  100.0  100.0  100.0   22.3  100.0
+	blib/lib/Games/Bingo/Card.pm  100.0  100.0   66.7  100.0  100.0   21.5   99.4
+	...lib/Games/Bingo/Column.pm  100.0  100.0    n/a  100.0  100.0   24.3  100.0
+	...Bingo/ColumnCollection.pm   92.5   84.6   33.3  100.0  100.0   31.4   90.6
+	.../Games/Bingo/Constants.pm  100.0    n/a    n/a  100.0    n/a    0.4  100.0
+	Total                          98.2   94.1   62.5  100.0  100.0  100.0   97.4
 	---------------------------- ------ ------ ------ ------ ------ ------ ------
 
 =head1 AUTHOR

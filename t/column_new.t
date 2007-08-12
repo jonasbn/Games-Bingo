@@ -1,12 +1,12 @@
 #!/usr/bin/perl -w
 
-# $Id: column_new.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: column_new.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use Test::More tests => 5;
 
 #test 1-2
-BEGIN { use_ok( 'Games::Bingo::Column' ); }
+use_ok( 'Games::Bingo::Column' );
 
 my @ary = qw(1 2 3 4 5 6 7 8 9);
 my $c = Games::Bingo::Column->new(1, @ary);

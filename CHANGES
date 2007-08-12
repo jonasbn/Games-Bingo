@@ -1,6 +1,33 @@
 CHANGES file for Games::Bingo
 
-$Id: CHANGES 1866 2007-08-08 09:48:20Z jonasbn $
+$Id: CHANGES 1870 2007-08-12 19:28:13Z jonasbn $
+
+0.15 Released 12th. of August 2007 (Update not necessary)
+
+- Refactored constructor for Games::Bingo::ColumnCollection so ref of class was
+  removed. Updated version to 0.03
+
+- Refactored constructor for Games::Bingo::Column so ref of class was removed.
+  Updated version to 0.03
+  
+- Refactored constructor for Games::Bingo::Card so ref of class was removed.
+  Updated version to 0.04
+  
+- Refactored out some code in Games::Bingo::Card, which was commented as
+  unimplemented, I cannot remember what and why so it goes
+
+- Refactored constructor for Games::Bingo so ref of class was removed
+
+- Added test inheritance t/MyBingo.pm and t/inheritance.t
+
+- Added more tests of Games::Bingo in general adding to overall coverage
+
+- Refactored out check for parameter, which would always be set
+
+- Fixed a problem in Build.PL scripts directory no longers existing, 
+  bingo.pl is located in bin, this should address the high magnitude 
+  of failing tests
+
 
 0.14 Released 8th. of August 2007 (Update not necessary)
 

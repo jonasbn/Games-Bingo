@@ -1,12 +1,12 @@
 #!/usr/bin/perl -w
 
-# $Id: collection_remove_column.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: collection_remove_column.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
-use Test::More tests => 3;
+use Test::More tests => 5;
 
 #test 1
-BEGIN { use_ok( 'Games::Bingo::ColumnCollection' ); }
+use_ok( 'Games::Bingo::ColumnCollection' );
 
 my $c1 = Games::Bingo::Column->new(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 my $c2 = Games::Bingo::Column->new(1, 11, 12, 13, 14, 15, 16, 17, 18, 19);
@@ -19,3 +19,7 @@ is(scalar @{$col}, 3);
 $col->_remove_column(1);
 
 is(scalar @{$col}, 2);
+
+is($col->_remove_column(-1), undef);
+
+is($col->_remove_column(4), undef);

@@ -9,7 +9,7 @@ my $build = Module::Build->new(
 	dist_version_from => 'lib/Games/Bingo.pm',
 	license           => 'perl',
 	scripts => {
-			'script/bingo.pl' => 'script/bingo.pl',
+		'bin/bingo.pl' => 'bin/bingo.pl',
 	},
 	recursive_test_files => 1,
 	requires => {
@@ -23,6 +23,7 @@ my $build = Module::Build->new(
 	},
 	no_index => {
 		directory => ['t'],
+		file      => ['t/MyBingo.pm'],
 	},
 	create_makefile_pl => 'traditional',
 );

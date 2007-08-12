@@ -12,6 +12,8 @@ LICENSE
 Makefile.PL
 MANIFEST			This list of files
 META.yml
+notes/coverage_report_0.14.txt
+notes/coverage_report_0.15.txt
 README
 t/00_load.t
 t/bingo_all_pulled.t
@@ -47,6 +49,8 @@ t/column_get_random_number.t
 t/column_new.t
 t/column_populate.t
 t/column_reverse.t
+t/inheritance.t
+t/MyBingo.pm
 t/pod-coverage.t
 t/pod.t
 TODO

@@ -1,11 +1,11 @@
 #!/usr/bin/perl -w
 
-# $Id: collection_add_column.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: collection_add_column.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
-use Test::More tests => 4;
+use Test::More tests => 5;
 
-BEGIN { use_ok( 'Games::Bingo::ColumnCollection' ); }
+use_ok( 'Games::Bingo::ColumnCollection' );
 
 my $col = Games::Bingo::ColumnCollection->new();
 
@@ -25,5 +25,10 @@ is(scalar @{$col}, 2,
 
 #test 3
 $col->add_column($c3);
+is(scalar @{$col}, 3, 
+	'Testing the contents of the collection after addition, we should have 3 elements');
+
+#test 4
+$col->add_column($c3, 2);
 is(scalar @{$col}, 3, 
 	'Testing the contents of the collection after addition, we should have 3 elements');

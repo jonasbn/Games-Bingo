@@ -1,6 +1,6 @@
 ---
 name: Games-Bingo
-version: 0.14
+version: 0.15
 author:
   - 'Jonas B. Nielsen, <jonasbn@cpan.org>'
 abstract: a bingo game Perl implementation
@@ -18,22 +18,24 @@ requires:
 provides:
   Games::Bingo:
     file: lib/Games/Bingo.pm
-    version: 0.14
+    version: 0.15
   Games::Bingo::Card:
     file: lib/Games/Bingo/Card.pm
-    version: 0.02
+    version: 0.04
   Games::Bingo::Column:
     file: lib/Games/Bingo/Column.pm
-    version: 0.02
+    version: 0.03
   Games::Bingo::ColumnCollection:
     file: lib/Games/Bingo/ColumnCollection.pm
-    version: 0.02
+    version: 0.03
   Games::Bingo::Constants:
     file: lib/Games/Bingo/Constants.pm
     version: 0.01
 no_index:
   directory:
     - t
+  file:
+    - t/MyBingo.pm
 generated_by: Module::Build version 0.2806
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

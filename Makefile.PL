@@ -15,7 +15,7 @@ WriteMakefile
                          },
           'INSTALLDIRS' => 'site',
           'EXE_FILES' => [
-                           'script/bingo.pl'
+                           'bin/bingo.pl'
                          ],
           'PL_FILES' => {}
         )

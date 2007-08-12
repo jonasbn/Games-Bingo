@@ -1,11 +1,11 @@
 #!/usr/local/bin/perl -w
 
-# $Id: collection_get_column.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: collection_get_column.t 1870 2007-08-12 19:28:13Z jonasbn $
 
 use strict;
-use Test::More tests => 12;
+use Test::More tests => 17;
 
-BEGIN { use_ok( 'Games::Bingo::Card' ); }
+use_ok( 'Games::Bingo::Card' );
 
 my $card = Games::Bingo::Card->new();
 my $fcc = $card->_init();
@@ -23,3 +23,19 @@ for (1..9) {
 
 #test 7
 is($t, 0, 'Testing the number of numbers generated');
+
+my $c1 = Games::Bingo::Column->new(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+my $c2 = Games::Bingo::Column->new(1, 11, 12, 13, 14, 15, 16, 17, 18, 19);
+my $c3 = Games::Bingo::Column->new(2, 21, 22, 23, 24, 25, 26, 27, 28, 29);
+
+my $col = Games::Bingo::ColumnCollection->new($c1, $c2, $c3);
+
+is($col->get_column(), undef);
+
+is($col->get_column(-1), undef);
+
+ok($col->get_column(1));
+
+is($col->get_column(4), undef);
+
+ok($col->get_column(1));

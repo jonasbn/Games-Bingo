@@ -1,6 +1,6 @@
 package Games::Bingo::ColumnCollection;
 
-# $Id: ColumnCollection.pm 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: ColumnCollection.pm 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use integer;
@@ -10,12 +10,12 @@ use vars qw(@ISA $VERSION);
 use Carp;
 
 @ISA = qw(Games::Bingo);
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 sub new {
 	my $class = shift;
 
-	my $self =  bless [], $class || ref $class;
+	my $self =  bless [], $class;
 	
 	push @{$self}, @_ if (@_);
 
@@ -68,12 +68,12 @@ sub _remove_column {
 
 sub get_column {
 	my ($self, $index, $do_splice, $auto_splice) = @_;
-		
-	unless ($index =~ m/^\d+$/) {
-		warn "no index specified";
-		return undef;
+
+	if ($index !~ m/^(-)?\d+$/) {
+		carp "no or illegal index specified";
+		return undef;		
 	}
-	
+
 	if ($index < 0 ) {
 		carp "cannot get column, index cannot be a negative number ($index)\n";
 		return undef;
@@ -81,7 +81,7 @@ sub get_column {
 		carp "cannot get column, no columns with that index ($index)\n";
 		return undef;
 	}
-		
+	
 	my $column = $self->[$index];
 		
 	if ($auto_splice and $column) {

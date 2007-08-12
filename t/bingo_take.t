@@ -1,12 +1,12 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo_take.t 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: bingo_take.t 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use Test::More tests => 3;
 
 #test 1
-BEGIN { use_ok( 'Games::Bingo' ); }
+use_ok( 'Games::Bingo' );
 
 my $bingo = Games::Bingo->new();
 my @taken;

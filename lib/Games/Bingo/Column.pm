@@ -1,6 +1,6 @@
 package Games::Bingo::Column;
 
-# $Id: Column.pm 1864 2007-08-08 09:12:37Z jonasbn $
+# $Id: Column.pm 1869 2007-08-12 15:52:36Z jonasbn $
 
 use strict;
 use integer;
@@ -8,7 +8,7 @@ use Games::Bingo;
 use vars qw(@ISA $VERSION);
 
 @ISA = qw(Games::Bingo);
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 sub new {
 	my $class = shift;
@@ -18,7 +18,7 @@ sub new {
 	my $self = bless {
 		label  => $label?$label:0,
 		_array  => \@array
-	}, $class || ref $class;
+	}, $class;
 }
 
 sub _reverse { $b <=> $a }
@@ -45,10 +45,7 @@ sub get_random_number {
 sub count_numbers {
 	my $self = shift;
 	
-	my $count = 0;
-	$count = (scalar @{$self->{_array}}) if $self->{_array};
-	
-	return $count;
+	return scalar @{$self->{_array}};
 }
 
 sub get_highest_number {
@@ -58,11 +55,8 @@ sub get_highest_number {
 	if ($do_splice) {
 		$number = shift(@{$self->{_array}});
 		return $number;
-	} else {
-		for (my $i = scalar @{$self->{_array}}; $i >= 0; $i--) {
-			$number = ${$self->{_array}}[$i];
-			return $number if $number =~ m/^\d+$/;
-		}
+	} else {		
+		return $self->{_array}->[0];
 	}
 }
 
