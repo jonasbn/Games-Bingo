@@ -8,7 +8,7 @@ HEAD
 
 - Aligned versions of all modules included in distribution
 
-0.15 Released 12th. of August 2007 (Update not necessary)
+0.15 2007.08.12 (Update not necessary)
 
 - Refactored constructor for Games::Bingo::ColumnCollection so ref of class was
   removed. Updated version to 0.03
@@ -35,7 +35,7 @@ HEAD
   of failing tests
 
 
-0.14 Released 8th. of August 2007 (Update not necessary)
+0.14 2007.08.08 (Update not necessary)
 
 - NB! a minor API change, the splitnumber method has moved from
   Games::Bingo::Card to Games::Bingo
@@ -70,7 +70,7 @@ HEAD
 - Added POD on test coverage
 
 
-0.13 Released 5th. of March 2005 (Update not necessary)
+0.13 2005.03.13 (Update not necessary)
 
 - POD cleaned up (removing unneccesary tags)
 
@@ -93,19 +93,19 @@ HEAD
 - Migrated from ExtUtils::MakeMaker to Module::Build
 
 
-0.12 Released 31st. of January 2004 (Update not necessary)
+0.12 2004.01.31 (Update not necessary)
 
 - According to my fellow Copenhagen Perl Monger Kim Hansen, the actual
   number of numbers in a bingo card is 15 not 12, so I have update
   G::B::Constants and fixed to test to use G::B::Constants.
 
 
-0.11 Released 25th. of January 2004 (Update only necessary for Perl 5.005_03)
+0.11 2004.01.25 (Update only necessary for Perl 5.005_03)
 
 - Fixed [cpan #5018] Patch from LTHEGLER applied to Games::Bingo::Constants.
 
 
-0.10 Released 21st. of January 2004 (Update recommended)
+0.10 2004.01.21 (Update recommended)
 
 - Added description to NAME section in G::B::Constants
 
@@ -118,7 +118,7 @@ HEAD
   they are shipped together (for now)
 
 
-0.09 Released 6th. of January 2004 (Update recommended)
+0.09 2004.01.06 (Update recommended)
 
 - Added Acknowledgement section to the Games::Bingo POD
 
@@ -174,7 +174,7 @@ HEAD
 - Fixed a bug in the pulled method in Games::Bingo
 
 
-0.08 Released 20th. of August 2003 (No update necessary)
+0.08 2003.08.20 (No update necessary)
 
 - Applied patch from Lars Thegler to bin/bingo.pl (SEE:
   http://rt.cpan.org/NoAuth/Bug.html?id=3271 and the BUGS file)
@@ -185,14 +185,14 @@ HEAD
 - Added Acknowledgement section to the README
 
 
-0.07 Released 2nd. of August 2003 (Update necessary)
+0.07 2003.08.02 (Update necessary)
 
 - Removed t/Cover.t from distribution since it is experimental this
   should fix the breaking test (SEE:
   http://rt.cpan.org/NoAuth/Bug.html?id=3114 and the BUGS file)
 
 
-0.06 Released 30th. of July 2003 (no update necessary)
+0.06 2003.07.30 (no update necessary)
 
 - Separation of Games::Bingo::Print out from Games::Bingo. This means
   the following files have been moved out from the Games::Bingo
@@ -224,7 +224,7 @@ HEAD
   CHANGES, release 0.05 and t/basic2.t)
 
 
-0.05 Released 25th. of June 2003 (no update necessary)
+0.05 2003.06.25 (no update necessary)
 
 - Added t/pod.t, one more requirement, have a look at: 
   http://use.perl.org/~petdance/journal/12391
@@ -246,7 +246,7 @@ HEAD
   the new methods
 
 
-0.04 Released 16th. of May 2003 (no update necessary)
+0.04 2003.05.16 (no update necessary)
 
 - Fixed the NAME section in Games::Bingo::Print, this should clear out
   the last bug
@@ -271,7 +271,7 @@ HEAD
 - Included the rules of the game of bingo in the README
 
 
-0.03 Released 14th. of May 2003 (no update necessary)
+0.03 2003.05.14 (no update necessary)
 
 - Cleaned up all the POD (no warnings)
 
@@ -280,7 +280,7 @@ HEAD
 - Added docs to the bin/* files.
 
 
-0.02 Released 11th. of May 2003 (no update necessary)
+0.02 2003.05.11, (no update necessary)
 
 - Fixed broken POD in Games::Bingo::Print
 
@@ -299,7 +299,7 @@ HEAD
 - Added more material to SYNOPSIS sections
 
 
-0.01 Released 10th. of May 2003 
+0.01 2003,05,.10
 
 - Project setup, all the files and prototypes, lots of programming etc.
 
