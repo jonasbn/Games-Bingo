@@ -7,7 +7,7 @@ require Exporter;
 
 use vars qw($VERSION @ISA @EXPORT_OK);
 
-$VERSION = '0.01';
+$VERSION = '0.15';
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(
 	NUMBER_OF_NUMBERS

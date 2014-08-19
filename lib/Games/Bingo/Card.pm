@@ -15,7 +15,7 @@ use Games::Bingo::Constants qw(
 	NUMBER_OF_NUMBERS
 );
 
-$VERSION = '0.04';
+$VERSION = '0.15';
 
 sub new {
 	my ($class) = @_;

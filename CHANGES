@@ -2,6 +2,10 @@ CHANGES file for Games::Bingo
 
 $Id: CHANGES 1870 2007-08-12 19:28:13Z jonasbn $
 
+HEAD
+
+- Aligned versions of all modules included in distribution
+
 0.15 Released 12th. of August 2007 (Update not necessary)
 
 - Refactored constructor for Games::Bingo::ColumnCollection so ref of class was
