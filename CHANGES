@@ -10,15 +10,15 @@ HEAD
 
 0.15 2007.08.12 (Update not necessary)
 
-- Refactored constructor for Games::Bingo::ColumnCollection so ref of class was
+- Refactored constructor for Games::Bingo::ColumnCollection so ref of
+  class was removed. Updated version to 0.03
+
+- Refactored constructor for Games::Bingo::Column so ref of class was
   removed. Updated version to 0.03
 
-- Refactored constructor for Games::Bingo::Column so ref of class was removed.
-  Updated version to 0.03
-  
-- Refactored constructor for Games::Bingo::Card so ref of class was removed.
-  Updated version to 0.04
-  
+- Refactored constructor for Games::Bingo::Card so ref of class was
+  removed. Updated version to 0.04
+
 - Refactored out some code in Games::Bingo::Card, which was commented as
   unimplemented, I cannot remember what and why so it goes
 
@@ -30,8 +30,8 @@ HEAD
 
 - Refactored out check for parameter, which would always be set
 
-- Fixed a problem in Build.PL scripts directory no longers existing, 
-  bingo.pl is located in bin, this should address the high magnitude 
+- Fixed a problem in Build.PL scripts directory no longers existing,
+  bingo.pl is located in bin, this should address the high magnitude
   of failing tests
 
 
@@ -39,7 +39,7 @@ HEAD
 
 - NB! a minor API change, the splitnumber method has moved from
   Games::Bingo::Card to Games::Bingo
-  
+
 - Updated Build.PL to more contemporary version
 
 - Updated MANIFEST.SKIP to more contemporary version
@@ -50,21 +50,21 @@ HEAD
 
 - Cleaned some more of the tests
 
-- Added scripts statement to Build.PL, to avoid problems with auto generated
-  Makefile.PL, when this is enabled in Build.PL
+- Added scripts statement to Build.PL, to avoid problems with auto
+  generated Makefile.PL, when this is enabled in Build.PL
 
-- Due to problems with coverage testing, module coverage showing up as n/a for
-  some of the core classes I decided to clean up the code a bit. Coverage now
-  works and the problem seemed to be circular usage of modules, more details
-  on the cleaning below
-  
+- Due to problems with coverage testing, module coverage showing up as
+  n/a for some of the core classes I decided to clean up the code a bit.
+  Coverage now works and the problem seemed to be circular usage of
+  modules, more details on the cleaning below
+
 - I have refactored Games::Bingo so it no longer inherits from
   Games::Bingo::Card
-  
+
 - Method splitnumber has moved from Games::Bingo::Card to Games::Bingo
   test t/card_splitnumber.t removed and introduced new test
   t/bingo_splitnumber.t instead
-  
+
 - Fixed some broken tests, they showed their ugly face when refactoring
 
 - Added POD on test coverage
@@ -102,7 +102,8 @@ HEAD
 
 0.11 2004.01.25 (Update only necessary for Perl 5.005_03)
 
-- Fixed [cpan #5018] Patch from LTHEGLER applied to Games::Bingo::Constants.
+- Fixed [cpan #5018] Patch from LTHEGLER applied to
+  Games::Bingo::Constants.
 
 
 0.10 2004.01.21 (Update recommended)
@@ -126,7 +127,7 @@ HEAD
 
 - Started implementing the new Games::Bingo::Card class aswell as the
   different games (1, 2 and full card).
-  
+
 - Merged Games::Bingo::Card and Games::Bingo::Print::Card obsoleting
   the latter, this also means migrating the test files related to
   Games::Bingo::Print::Card to Games::Bingo
@@ -139,17 +140,17 @@ HEAD
 	NUMBER_OF_NUMBERS_IN_ROW == 4
 	NUMBER_OF_ROWS_IN_CARD == 3
 	NUMBER_OF_COLUMNS_IN_CARD == 9
-	NUMBER_OF_NUMBERS_IN_CARD == 
-		NUMBER_OF_NUMBERS_IN_ROW * NUMBER_OF_ROWS_IN_CARD
+	NUMBER_OF_NUMBERS_IN_CARD ==
+	NUMBER_OF_NUMBERS_IN_ROW * NUMBER_OF_ROWS_IN_CARD
 
-- Added a b/ directory containing *.t files, which demonstrate the errors
-  found in 0.08
+- Added a b/ directory containing *.t files, which demonstrate the
+  errors found in 0.08
 
 - Added b/bless.t, which is aimed at the bless bug
 
 - Added b/short.t which is aimed at the number shortage bug
 
-- Added b/sort.t which is aimed at the number sorting bug 
+- Added b/sort.t which is aimed at the number sorting bug
 
 - Renamed get_number to get_highest_number in G::B::Column
 
@@ -160,15 +161,15 @@ HEAD
 
 - Fixed the short bug (SEE BUGS), the new _flush method also fixed this
   problem
-  
+
 - Fixed bug in card generation code, where the picked numbers was put
   in the wrong collections
-  
+
 - Fixed sort bug (SEE BUGS), now the generated card is properly sorted
 
-- Started cleaning up some of the tests, the many changes in the upcoming
-  release 0.09 have had great impact on the test suite
-  
+- Started cleaning up some of the tests, the many changes in the
+  upcoming release 0.09 have had great impact on the test suite
+
 - Removed set_status method from G::B::Column, it is no longer used
 
 - Fixed a bug in the pulled method in Games::Bingo
@@ -178,7 +179,7 @@ HEAD
 
 - Applied patch from Lars Thegler to bin/bingo.pl (SEE:
   http://rt.cpan.org/NoAuth/Bug.html?id=3271 and the BUGS file)
- 
+
 - Applied patch from Lars to Games::Bingo docs and stuff (SEE:
   http://rt.cpan.org/NoAuth/Bug.html?id=3273 and the BUGS file)
 
@@ -197,49 +198,49 @@ HEAD
 - Separation of Games::Bingo::Print out from Games::Bingo. This means
   the following files have been moved out from the Games::Bingo
   distribution:
-   
+
     bin/bingo_plates.pl
     lib/Games/Bingo/Print.pm
     lib/Games/Bingo/Print/Plate.pm
    	t/Print.t
    	t/Plate.t
    	t/Plate2.t
-   
+
   And the TODO have been cleaned up (Print tasks have been moved to
   Games::Bingo::Print TODO)
- 
+
 - Removed test.pl
- 
+
 - Added t/cover.t which can be used for coverage test
- 
+
 - Added t/basic2.t holding test of pull
 
 - Added $VERSION variable to remaining modules
- 
+
 - Renamed plates to cards (proper english)
- 
+
 - Exchanged personal email address for CPAN address
- 
+
 - Additional tests of the new methods in Games::Bingo (SEE
   CHANGES, release 0.05 and t/basic2.t)
 
 
 0.05 2003.06.25 (no update necessary)
 
-- Added t/pod.t, one more requirement, have a look at: 
+- Added t/pod.t, one more requirement, have a look at:
   http://use.perl.org/~petdance/journal/12391
-  
+
 - Updated the INSTALL guide by request with information on PDFLib
   installation
 
 - Implemented integration with Games::Bingo::Bot, introducing new
   class: Games::Bingo::Card
-  
+
 - Implemented new methods in Games::Bingo: pulled, _all_pulled and pull
 
-- Implemented internal structure in Games::Bingo to hold the taken 
+- Implemented internal structure in Games::Bingo to hold the taken
   numbers, now referred to as pulled
-  
+
 - This release is require by Games::Bingo::Bot 0.01 (just released)
 
 - Cleaned a few POD mistakes (escapes) and added some simple docs on
