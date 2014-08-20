@@ -20,6 +20,7 @@ my $build = Module::Build->new(
 			'Data::Dumper'  => 0, #core
 			'UNIVERSAL'     => 0, #core
 			'Carp'          => 0, #core
+			'perl'          => '5.6.0', #5.006
 	},
 	no_index => {
 		directory => ['t'],

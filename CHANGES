@@ -2,6 +2,8 @@ CHANGES file for Games::Bingo
 
 HEAD
 
+- Added Perl version requirement (5.6.0)
+
 - Added use of warnings
 
 - Added t/changes.t, Test::CPAN::Changes test

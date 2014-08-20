@@ -2,6 +2,7 @@ package Games::Bingo::Card;
 
 use strict;
 use warnings;
+use 5.006; #perl 5.6.0
 use integer;
 use vars qw($VERSION);
 use Games::Bingo::Column;
