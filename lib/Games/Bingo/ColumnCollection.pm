@@ -1,6 +1,7 @@
 package Games::Bingo::ColumnCollection;
 
 use strict;
+use warnings;
 use integer;
 use Games::Bingo;
 use Games::Bingo::Column;

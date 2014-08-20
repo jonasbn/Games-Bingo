@@ -1,6 +1,7 @@
 package Games::Bingo::Column;
 
 use strict;
+use warnings;
 use integer;
 use Games::Bingo;
 use vars qw(@ISA $VERSION);

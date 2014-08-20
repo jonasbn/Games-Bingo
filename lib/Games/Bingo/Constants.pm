@@ -1,8 +1,7 @@
 package Games::Bingo::Constants;
 
-
-
 use strict;
+use warnings;
 require Exporter;
 
 use vars qw($VERSION @ISA @EXPORT_OK);

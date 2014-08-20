@@ -4,9 +4,12 @@ $Id: CHANGES 1870 2007-08-12 19:28:13Z jonasbn $
 
 HEAD
 
+- Added use of warnings
+
 - Added t/changes.t, Test::CPAN::Changes test
 
 - Aligned versions of all modules included in distribution
+
 
 0.15 2007.08.12 (Update not necessary)
 

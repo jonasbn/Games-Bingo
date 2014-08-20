@@ -1,8 +1,7 @@
 package Games::Bingo;
 
-
-
 use strict;
+use warnings;
 use integer;
 use POSIX qw(floor);
 use vars qw($VERSION);

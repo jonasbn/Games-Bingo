@@ -1,8 +1,7 @@
 #!/usr/bin/perl -w
 
-
-
 use strict;
+use warnings;
 use Games::Bingo;
 
 my $version = "0.02";

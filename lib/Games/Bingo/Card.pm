@@ -1,6 +1,7 @@
 package Games::Bingo::Card;
 
 use strict;
+use warnings;
 use integer;
 use vars qw($VERSION);
 use Games::Bingo::Column;
