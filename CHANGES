@@ -1,6 +1,6 @@
 CHANGES file for Games::Bingo
 
-HEAD
+0.16 2014.08.20, maintenance release, update not required
 
 - Added t/kwalitee.t Test::Kwalitee test
 

@@ -9,7 +9,7 @@ use vars qw(@ISA $VERSION);
 use Carp;
 
 @ISA = qw(Games::Bingo);
-$VERSION = '0.15';
+$VERSION = '0.16';
 
 sub new {
 	my $class = shift;
