@@ -2,6 +2,8 @@ CHANGES file for Games::Bingo
 
 HEAD
 
+- Added t/kwalitee.t Test::Kwalitee test
+
 - Added Perl version requirement (5.6.0)
 
 - Added use of warnings
