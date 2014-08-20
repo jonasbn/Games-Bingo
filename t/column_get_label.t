@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: column_new.t 1090 2004-01-04 20:05:48Z jonasbn $
+
 
 use strict;
 use Test::More tests => 2;

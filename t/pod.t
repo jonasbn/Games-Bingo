@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: pod.t 1639 2006-12-17 08:23:18Z jonasbn $ 
+
 
 #pod test courtesy of petdance
 #http://use.perl.org/~petdance/journal/12391

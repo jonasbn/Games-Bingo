@@ -1,6 +1,6 @@
 # pod.t file providing pod coverage test for Games::Bingo et al
 
-# $Id$
+
 
 #pod test courtesy of petdance
 #http://use.perl.org/~petdance/journal/17412

@@ -1,7 +1,5 @@
 package Games::Bingo::Column;
 
-# $Id: Column.pm 1869 2007-08-12 15:52:36Z jonasbn $
-
 use strict;
 use integer;
 use Games::Bingo;

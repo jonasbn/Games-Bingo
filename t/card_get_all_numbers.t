@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: card_get_all_numbers.t 1869 2007-08-12 15:52:36Z jonasbn $
+
 
 use strict;
 use Test::More tests => 2;

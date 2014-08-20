@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: bingo.pl 1639 2006-12-17 08:23:18Z jonasbn $
+
 
 use strict;
 use Games::Bingo;

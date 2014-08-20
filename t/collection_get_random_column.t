@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: collection_get_random_column.t 1869 2007-08-12 15:52:36Z jonasbn $
+
 
 use strict;
 use Test::More tests => 4;

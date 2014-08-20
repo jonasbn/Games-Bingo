@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: card_splitnumber.t 1640 2006-12-17 10:40:02Z jonasbn $
+
 
 use strict;
 use Test::More tests => 9;

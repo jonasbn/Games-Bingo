@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: column_reverse.t,v 1.1 2004/01/04 20:05:48 jonasbn Exp $
+
 
 use strict;
 use Test::More tests => 10;

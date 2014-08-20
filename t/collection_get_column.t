@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl -w
 
-# $Id: collection_get_column.t 1870 2007-08-12 19:28:13Z jonasbn $
+
 
 use strict;
 use Test::More tests => 17;
