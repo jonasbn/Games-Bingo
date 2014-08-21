@@ -11,6 +11,7 @@ my $build = Module::Build->new(
 	scripts => {
 		'bin/bingo.pl' => 'bin/bingo.pl',
 	},
+	create_readme => 1,
 	recursive_test_files => 1,
 	requires => {
 			'POSIX'         => 0,
