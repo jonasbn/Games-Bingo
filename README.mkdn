@@ -1,0 +1,209 @@
+[![CPAN version](https://badge.fury.io/pl/Games-Bingo.svg)](http://badge.fury.io/pl/Games-Bingo)
+[![Build Status](https://travis-ci.org/jonasbn/Games-Bingo.svg?branch=master)](https://travis-ci.org/jonasbn/Games-Bingo)
+[![Coverage Status](https://coveralls.io/repos/jonasbn/Games-Bingo/badge.png?branch=master)](https://coveralls.io/r/jonasbn/Games-Bingo?branch=master)
+
+# NAME
+
+Games::Bingo - a bingo game Perl implementation
+
+# SYNOPSIS
+
+        use Games::Bingo;
+        my $bingo = Games::Bingo-E<gt>new(90);
+        
+        my $bingo = Games::Bingo-E<gt>new();
+
+90 is actually the default
+
+        my $number = $bingo-E<gt>play(); >>
+
+        my @taken;
+
+        $bingo-E<gt>pull(\@pulled, $number);
+
+or
+
+        use Games::Bingo;
+        my $bingo = Games::Bingo-E<gt>new();
+
+        my @numbers;
+        $bingo-E<gt>init(\@numbers, 90);
+
+        my $number = $bingo-E<gt>play(\@numbers);
+        my @taken;
+
+        $bingo-E<gt>take(\@taken, $number);
+
+# DESCRIPTION
+
+This is a simple game of bingo. The program can randomly call out the
+numbers. The game will be get more features in the future, please refer
+to the __TODO__ section (below).
+
+# METHODS
+
+This are the central methods of Games::Bingo
+
+## new
+
+The constructor is quite simple. It can either be called without any
+paramters and then followed by a call to __init__ see below or the
+ceiling for the numbers (stored internally) can be given as a
+parameter, the latter is the recommeded use.
+
+If no indicator of the number of numbers you want in your bingo game is
+given the game defaults to 90. This can be overwritten if using the old
+API, please refer to the __SYNOPSIS__.
+
+The attributes of the class are the following:
+
+- \_numbers
+
+    The list holding all the numbers in the pull pool.
+
+- \_numbers\_pulled
+
+    A list holding the numbers which have been pulled.
+
+- game
+
+    A flag indicating where the game currently are and how it should be run.
+
+    These are the different values:
+
+    - Game is over
+    - 1
+
+        full card (the default)
+
+    - 2
+
+        2 rows
+
+    - 3
+
+        1 row
+
+## init
+
+This method takes two parameters. An array reference and a ceiling, the
+method will push numbers onto the array reference from 1 to ceiling
+(including the ceiling). Initializing the numbers for the game.
+
+The use of init is not recommended, use the constructor in the
+recommended way instead.
+
+Returns 1 upon success.
+
+## play
+
+The __play__ is one of the essential methods in the game, it takes an
+array reference and returns a random number from the array referenced
+to. The reference shrinks with one with each call.
+
+The recommended way is though to use the internally stored array, where
+play then takes no arguments, please refer to __new__ and __init__ and
+the __SYNOPSIS__.
+
+## take
+
+The __take__ method is the memory of the game. It takes to parameters, a
+reference to an array of arrays (the memory), and additionaly the number
+picked by e.g. the __play__ method.
+
+Since the first program to use the class/module was a console based the
+take method organizes the numbers in an array of array for a nicer
+presentation. This will probably be changed later (if necessary).
+
+## random
+
+The encapsulation of the rand function. Takes a number as a paramtere
+and returns a number between 0 and the number given as a parameter just
+as rand (% perldoc -f rand).
+
+The result is rounded down using POSIX::floor
+
+## pulled
+
+A method which return 1 or 0 indicating true or false, whether the
+number given as a parameter has been pulled. 
+
+## \_all\_pulled
+
+A method which returns all pulled numbers as an array.
+
+## pull
+
+A clumsy alias/"overload" implementation of the take method.
+
+## splitnumber
+
+Takes a number (prepends 0 its a single digit number) and returns it
+split in two (We use this for identifying the column it belongs to).
+
+# SEE ALSO
+
+- [Games::Bingo::Column](https://metacpan.org/pod/Games::Bingo::Column)
+- [Games::Bingo::ColumnCollection](https://metacpan.org/pod/Games::Bingo::ColumnCollection)
+- [Games::Bingo::Print](https://metacpan.org/pod/Games::Bingo::Print)
+- [Games::Bingo::Card](https://metacpan.org/pod/Games::Bingo::Card)
+- [Games::Bingo::Bot](https://metacpan.org/pod/Games::Bingo::Bot)
+- `bin/bingo.pl`
+
+# TODO
+
+The TODO file contains a complete list for the whole Games::Bingo
+project.
+
+# BUGS
+
+Please report issues via CPAN RT:
+
+    http://rt.cpan.org/NoAuth/Bugs.html?Dist=Games-Bingo
+
+or by sending mail to
+
+    bug-Games-Bingo@rt.cpan.org
+
+# TEST COVERAGE
+
+        ---------------------------- ------ ------ ------ ------ ------ ------ ------
+        File                           stmt   bran   cond    sub    pod   time  total
+        ---------------------------- ------ ------ ------ ------ ------ ------ ------
+        blib/lib/Games/Bingo.pm       100.0  100.0  100.0  100.0  100.0   22.3  100.0
+        blib/lib/Games/Bingo/Card.pm  100.0  100.0   66.7  100.0  100.0   21.5   99.4
+        ...lib/Games/Bingo/Column.pm  100.0  100.0    n/a  100.0  100.0   24.3  100.0
+        ...Bingo/ColumnCollection.pm   92.5   84.6   33.3  100.0  100.0   31.4   90.6
+        .../Games/Bingo/Constants.pm  100.0    n/a    n/a  100.0    n/a    0.4  100.0
+        Total                          98.2   94.1   62.5  100.0  100.0  100.0   97.4
+        ---------------------------- ------ ------ ------ ------ ------ ------ ------
+
+# AUTHOR
+
+jonasbn <jonasbn@cpan.org>
+
+# ACKNOWLEDGEMENTS
+
+This is a compilation of all the people have helped me, their names are also
+scattered all over the modules where appropriate.
+
+- Rikke Gornitzka for inviting me to the real bingo game, which
+started all this
+- Matt Sergeant (MSERGEANT) for suggesting using PDFLib
+- Allan Juul algoritms and code help
+- Michael Legart (LEGART) trying to understand my problems
+- Lars Thegler (THEGLER) for several bug reports
+- Casper Warming (WARMING), for helping with the OSX client
+- The remaining Copenhagen Perl Mongers for testing the IRC game
+- Mike Castle for his POD patch
+- All the ppl who have commented on my journal coming with
+suggestions etc.
+
+# COPYRIGHT
+
+Games::Bingo and related modules are free software and is released under
+the Artistic License. See
+[http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html) for details.
+
+Games::Bingo is (C) 2003-2007 Jonas B. Nielsen (jonasbn)
+<jonasbn@cpan.org>
