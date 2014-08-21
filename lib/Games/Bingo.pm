@@ -7,7 +7,7 @@ use POSIX qw(floor);
 use vars qw($VERSION);
 use Games::Bingo::Constants qw(NUMBER_OF_NUMBERS);
 
-$VERSION = '0.16';
+$VERSION = '0.17';
 
 sub new {
 	my $class = shift;
