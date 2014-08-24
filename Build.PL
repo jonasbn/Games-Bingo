@@ -25,5 +25,15 @@ my $build = Module::Build->new(
         file      => ['t/MyBingo.pm'],
     },
     create_makefile_pl => 'traditional',
+    meta_merge => {
+        resources => {
+            homepage =>
+                'https://github.com/jonasbn/Games-Bingo',
+            bugtracker =>
+                'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Games-Bingo',
+            repository =>
+                'https://github.com/jonasbn/Games-Bingo',
+        }
+    },
 );
 $build->create_build_script();
