@@ -7,7 +7,7 @@ use Games::Bingo;
 use vars qw(@ISA $VERSION);
 
 @ISA = qw(Games::Bingo);
-$VERSION = '0.17';
+$VERSION = '0.18';
 
 sub new {
 	my $class = shift;
