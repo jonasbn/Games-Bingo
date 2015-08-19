@@ -38,7 +38,7 @@ or
 
 This is a simple game of bingo. The program can randomly call out the
 numbers. The game will be get more features in the future, please refer
-to the __TODO__ section (below).
+to the **TODO** section (below).
 
 # METHODS
 
@@ -47,13 +47,13 @@ This are the central methods of Games::Bingo
 ## new
 
 The constructor is quite simple. It can either be called without any
-paramters and then followed by a call to __init__ see below or the
+paramters and then followed by a call to **init** see below or the
 ceiling for the numbers (stored internally) can be given as a
 parameter, the latter is the recommeded use.
 
 If no indicator of the number of numbers you want in your bingo game is
 given the game defaults to 90. This can be overwritten if using the old
-API, please refer to the __SYNOPSIS__.
+API, please refer to the **SYNOPSIS**.
 
 The attributes of the class are the following:
 
@@ -97,19 +97,19 @@ Returns 1 upon success.
 
 ## play
 
-The __play__ is one of the essential methods in the game, it takes an
+The **play** is one of the essential methods in the game, it takes an
 array reference and returns a random number from the array referenced
 to. The reference shrinks with one with each call.
 
 The recommended way is though to use the internally stored array, where
-play then takes no arguments, please refer to __new__ and __init__ and
-the __SYNOPSIS__.
+play then takes no arguments, please refer to **new** and **init** and
+the **SYNOPSIS**.
 
 ## take
 
-The __take__ method is the memory of the game. It takes to parameters, a
+The **take** method is the memory of the game. It takes to parameters, a
 reference to an array of arrays (the memory), and additionaly the number
-picked by e.g. the __play__ method.
+picked by e.g. the **play** method.
 
 Since the first program to use the class/module was a console based the
 take method organizes the numbers in an array of array for a nicer
@@ -199,11 +199,12 @@ started all this
 - All the ppl who have commented on my journal coming with
 suggestions etc.
 
+# AUTHOR
+
+Jonas B. Nielsen, (jonasbn) - `<jonasbn@cpan.org>`
+
 # COPYRIGHT
 
-Games::Bingo and related modules are free software and is released under
-the Artistic License. See
-[http://www.perl.com/language/misc/Artistic.html](http://www.perl.com/language/misc/Artistic.html) for details.
+Games-Bingo is (C) by Jonas B. Nielsen, (jonasbn) 2003-2015
 
-Games::Bingo is (C) 2003-2007 Jonas B. Nielsen (jonasbn)
-<jonasbn@cpan.org>
+Games-Bingo is released under the artistic license 2.0

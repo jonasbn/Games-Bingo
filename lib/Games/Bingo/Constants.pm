@@ -95,17 +95,12 @@ project.
 
 =head1 AUTHOR
 
-jonasbn E<lt>jonasbn@cpan.orgE<gt>
-
-=cut
+Jonas B. Nielsen, (jonasbn) - C<< <jonasbn@cpan.org> >>
 
 =head1 COPYRIGHT
 
-Games::Bingo::Constants and related modules are free software and is
-released under the Artistic License. See
-E<lt>http://www.perl.com/language/misc/Artistic.htmlE<gt> for details.
+Games-Bingo is (C) by Jonas B. Nielsen, (jonasbn) 2003-2015
 
-Games::Bingo is (C) 2003-2004 Jonas B. Nielsen (jonasbn)
-E<lt>jonasbn@cpan.orgE<gt>
+Games-Bingo is released under the artistic license 2.0
 
 =cut

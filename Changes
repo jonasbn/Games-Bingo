@@ -1,17 +1,24 @@
 Changes file for Games::Bingo
 
-0.17 2014.08.21, maintenance release, update not required
+0.18 2015-08-19 Maintenance release, update not required
+
+- Migrated from Module::Build to Dist::Zilla
+
+- Upgraded from artistic license 1.0 to artistic license 2.0
+
+
+0.17 2014-08-21 Maintenance release, update not required
 
 - Addressing Github issue #1. Report on failing test from CPAN testers
   The issue is one of case sentivity on the CHANGES file (this file).
   File attempted renamed.
 
 
-0.16 2014.08.20, maintenance release, update not required
+0.16 2014-08-20 Maintenance release, update not required
 
 - Added t/kwalitee.t Test::Kwalitee test
 
-- Added Perl version requirement (5.6.0)
+- Added Perl version requirement (5-6-0)
 
 - Added use of warnings
 
@@ -20,7 +27,7 @@ Changes file for Games::Bingo
 - Aligned versions of all modules included in distribution
 
 
-0.15 2007.08.12 (Update not necessary)
+0.15 2007-08-12 Maintenance release, update not required
 
 - Refactored constructor for Games::Bingo::ColumnCollection so ref of
   class was removed. Updated version to 0.03
@@ -47,7 +54,7 @@ Changes file for Games::Bingo
   of failing tests
 
 
-0.14 2007.08.08 (Update not necessary)
+0.14 2007-08-08 Maintenance release, update not required
 
 - NB! a minor API change, the splitnumber method has moved from
   Games::Bingo::Card to Games::Bingo
@@ -82,7 +89,7 @@ Changes file for Games::Bingo
 - Added POD on test coverage
 
 
-0.13 2005.03.13 (Update not necessary)
+0.13 2005-03-13 Maintenance release, update not required
 
 - POD cleaned up (removing unneccesary tags)
 
@@ -105,20 +112,22 @@ Changes file for Games::Bingo
 - Migrated from ExtUtils::MakeMaker to Module::Build
 
 
-0.12 2004.01.31 (Update not necessary)
+0.12 2004-01-31 Maintenance release, update not required
 
 - According to my fellow Copenhagen Perl Monger Kim Hansen, the actual
   number of numbers in a bingo card is 15 not 12, so I have update
   G::B::Constants and fixed to test to use G::B::Constants.
 
 
-0.11 2004.01.25 (Update only necessary for Perl 5.005_03)
+0.11 2004-01-25 Bug fix release, update recommended
+
+- Update only necessary for Perl 5.005_03
 
 - Fixed [cpan #5018] Patch from LTHEGLER applied to
   Games::Bingo::Constants.
 
 
-0.10 2004.01.21 (Update recommended)
+0.10 2004-01-21 Bug fix release, update recommended
 
 - Added description to NAME section in G::B::Constants
 
@@ -131,7 +140,7 @@ Changes file for Games::Bingo
   they are shipped together (for now)
 
 
-0.09 2004.01.06 (Update recommended)
+0.09 2004-01-06 Bug fix release, update recommended
 
 - Added Acknowledgement section to the Games::Bingo POD
 
@@ -187,7 +196,7 @@ Changes file for Games::Bingo
 - Fixed a bug in the pulled method in Games::Bingo
 
 
-0.08 2003.08.20 (No update necessary)
+0.08 2003-08-20 Bug fix release, update recommended
 
 - Applied patch from Lars Thegler to bin/bingo.pl (SEE:
   http://rt.cpan.org/NoAuth/Bug.html?id=3271 and the BUGS file)
@@ -198,14 +207,14 @@ Changes file for Games::Bingo
 - Added Acknowledgement section to the README
 
 
-0.07 2003.08.02 (Update necessary)
+0.07 2003-08-02 Maintenance release, update not required
 
 - Removed t/Cover.t from distribution since it is experimental this
   should fix the breaking test (SEE:
   http://rt.cpan.org/NoAuth/Bug.html?id=3114 and the BUGS file)
 
 
-0.06 2003.07.30 (no update necessary)
+0.06 2003-07-30 Maintenance release, update not required
 
 - Separation of Games::Bingo::Print out from Games::Bingo. This means
   the following files have been moved out from the Games::Bingo
@@ -237,7 +246,7 @@ Changes file for Games::Bingo
   CHANGES, release 0.05 and t/basic2.t)
 
 
-0.05 2003.06.25 (no update necessary)
+0.05 2003-06-25 Feature release, update recommended
 
 - Added t/pod.t, one more requirement, have a look at:
   http://use.perl.org/~petdance/journal/12391
@@ -259,7 +268,7 @@ Changes file for Games::Bingo
   the new methods
 
 
-0.04 2003.05.16 (no update necessary)
+0.04 2003-05-16 Maintenance release, update not required
 
 - Fixed the NAME section in Games::Bingo::Print, this should clear out
   the last bug
@@ -284,16 +293,16 @@ Changes file for Games::Bingo
 - Included the rules of the game of bingo in the README
 
 
-0.03 2003.05.14 (no update necessary)
+0.03 2003-05-14 Maintenance release, update not required
 
 - Cleaned up all the POD (no warnings)
 
-- Update READ me with bin/* files, CamelBones Application
+- Update README with bin/* files, CamelBones Application
 
 - Added docs to the bin/* files.
 
 
-0.02 2003.05.11, (no update necessary)
+0.02 2003-05-11 Maintenance release, update not required
 
 - Fixed broken POD in Games::Bingo::Print
 
@@ -312,7 +321,7 @@ Changes file for Games::Bingo
 - Added more material to SYNOPSIS sections
 
 
-0.01 2003,05,.10
+0.01 2003-05-10 Initial version
 
 - Project setup, all the files and prototypes, lots of programming etc.
 

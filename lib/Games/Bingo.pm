@@ -118,6 +118,16 @@ sub splitnumber {
 
 __END__
 
+=pod
+
+=begin markdown
+
+[![CPAN version](https://badge.fury.io/pl/Games-Bingo.svg)](http://badge.fury.io/pl/Games-Bingo)
+[![Build Status](https://travis-ci.org/jonasbn/Games-Bingo.svg?branch=master)](https://travis-ci.org/jonasbn/Games-Bingo)
+[![Coverage Status](https://coveralls.io/repos/jonasbn/Games-Bingo/badge.png?branch=master)](https://coveralls.io/r/jonasbn/Games-Bingo?branch=master)
+
+=end markdown
+
 =head1 NAME
 
 Games::Bingo - a bingo game Perl implementation
@@ -347,13 +357,14 @@ suggestions etc.
 
 =back
 
+=head1 AUTHOR
+
+Jonas B. Nielsen, (jonasbn) - C<< <jonasbn@cpan.org> >>
+
 =head1 COPYRIGHT
 
-Games::Bingo and related modules are free software and is released under
-the Artistic License. See
-L<http://www.perl.com/language/misc/Artistic.html> for details.
+Games-Bingo is (C) by Jonas B. Nielsen, (jonasbn) 2003-2015
 
-Games::Bingo is (C) 2003-2007 Jonas B. Nielsen (jonasbn)
-E<lt>jonasbn@cpan.orgE<gt>
+Games-Bingo is released under the artistic license 2.0
 
 =cut
