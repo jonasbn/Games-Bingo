@@ -116,6 +116,8 @@ sub splitnumber {
 
 1;
 
+## no critic (ProhibitFlagComments)
+
 __END__
 
 =pod
